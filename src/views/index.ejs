@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="theme-color" content="#1d99a7" />
+
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        />
+        <link rel="stylesheet" href="./styles/style.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Interface | Energia Solar</title>
+    </head>
+
+    <body>
+        <!-- PRELOADER -->
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+
+        <!-- FIM PREALODER -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/"
+                        ><img
+                            src="./images/logo-navbar.png"
+                            alt=""
+                            class="logo-img"
+                    /></a>
+                </div>
+
+                <div class="menu-mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <ul class="menu-items">
+                    <li class="menu-item">Home</li>
+                    <li class="menu-item">Sobre</li>
+                    <li class="menu-item">Benefícios</li>
+                    <li class="menu-item">Como funciona</li>
+                    <li class="menu-item">Simulador</li>
+                    <li class="menu-item">Portfólio</li>
+                    <li class="menu-item">Contato</li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="whatsapp-btn">
+            <a
+                href="https://web.whatsapp.com/send?phone=5541995817916"
+                target="_blank"
+            >
+                <img
+                    src="./images/whatsapp-icon-cta.png"
+                    alt=""
+                    class="whatsapp-icon-cta"
+            /></a>
+        </div>
+
+        <section class="hero" id="hero">
+            <div class="hero-section">
+                <h1 class="hero-section__display-title">
+                    Soluções inteligentes
+                </h1>
+                <h3 class="hero-section__display-subtitle">
+                    Sustentabilidade e economia
+                </h3>
+                <button class="hero-section__display-button">
+                    <a href="/simulacao"><h4>Faça uma simulação</h4></a>
+                </button>
+            </div>
+        </section>
+
+        <section class="quem-somos" id="quem-somos">
+            <div class="quem-somos__container">
+                <div class="container__cards">
+                    <div class="quem-somos__cards">
+                        <div class="quem-somos__cards__card">
+                            <div
+                                class="
+                                    quem-somos__cards__card__container-inside
+                                "
+                            >
+                                <div class="circle-img">
+                                    <img
+                                        src="./images/sun.svg"
+                                        alt="Ícone Sol"
+                                        onerror="this.onerror=null; this.src='circle.png'"
+                                        class="quem-somos-circle-img"
+                                    />
+                                </div>
+                                <div class="card-title">Luz solar</div>
+                                <div class="card-description">
+                                    Durante o dia, a luz solar que incide nos
+                                    painéis é absorvida e convertida em energia
+                                    elétrica. O inversor capta a corrente
+                                    contínua e a transforma em corrente
+                                    alternada, que pode ser consumida na sua
+                                    casa ou empresa.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quem-somos__cards__card__middle">
+                            <div
+                                class="
+                                    quem-somos__cards__card__container-inside
+                                "
+                            >
+                                <div class="circle-img">
+                                    <img
+                                        src="./images/energy.svg"
+                                        alt="Ícone energia"
+                                        onerror="this.onerror=null; this.src='energy.png'"
+                                        class="quem-somos-circle-img"
+                                    />
+                                </div>
+                                <div class="card-title">Consumo</div>
+                                <div class="card-description">
+                                    A corrente alternada é consumida na
+                                    residência ou na empresa, gerando energia
+                                    para as lâmpadas, eletrodomésticos e outros
+                                    equipamentos elétricos.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quem-somos__cards__card">
+                            <div
+                                class="
+                                    quem-somos__cards__card__container-inside
+                                "
+                            >
+                                <div class="circle-img">
+                                    <img
+                                        src="./images/return.svg"
+                                        alt="Ícone crédito"
+                                        onerror="this.onerror=null; this.src='return.png'"
+                                        class="quem-somos-circle-img"
+                                    />
+                                </div>
+                                <div class="card-title">Crédito</div>
+                                <div class="card-description">
+                                    O excedente de energia gerada é injetada na
+                                    rede de distribuição, gerando créditos que
+                                    podem ser utilizados em até 60 meses.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quem-somos-nos">
+                    <div class="quem-somos-nos__container">
+                        <div class="quem-somos-nos__container__text">
+                            <div class="quem-somos-nos__container__text__title">
+                                Quem somos nós?
+                            </div>
+                            <div
+                                class="
+                                    quem-somos-nos__container__text__description
+                                "
+                            >
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Maecenas vel pretium felis,
+                                    sit amet malesuada massa. Fusce elementum ex
+                                    nec tortor finibus, non interdum lectus
+                                    mattis. Sed mattis augue eros, eu eleifend
+                                    purus elementum eget. Pellentesque laoreet
+                                    congue est ac scelerisque. Maecenas quis
+                                    aliquet est.
+                                </p>
+
+                                <p>
+                                    Aenean varius sapien sed ipsum vehicula
+                                    dignissim. Aenean pharetra tortor dictum
+                                    urna fringilla, sed bibendum lorem ornare.
+                                    In posuere facilisis tortor, sed rutrum
+                                    justo. Duis tempus suscipit placerat. Donec
+                                    ante turpis, lacinia eu rhoncus lacinia,
+                                    cursus eget arcu.
+                                </p>
+
+                                <p>
+                                    Aenean varius sapien sed ipsum vehicula
+                                    dignissim. Aenean pharetra tortor dictum
+                                    urna fringilla, sed bibendum lorem ornare.
+                                    In posuere facilisis tortor, sed rutrum
+                                    justo. Duis tempus suscipit placerat. Donec
+                                    ante turpis, lacinia eu rhoncus lacinia,
+                                    cursus eget arcu.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="quem-somos-nos__container__img">
+                            <img
+                                src="./images/solar-panel-logo-removebg.png"
+                                alt="Foto painel solar"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="beneficios" id="beneficios">
+            <div class="beneficios__container">
+                <h1 class="beneficios-title">Benefícios</h1>
+                <h3 class="beneficios-subtitle">
+                    Algumas vantagens que você terá investindo
+                </h3>
+
+                <div class="beneficios__container__cards">
+                    <div class="beneficios__container__cards__card">
+                        <div class="beneficios-icon">
+                            <img
+                                src="./images/house.svg"
+                                alt="Ícone casa"
+                                onerror="this.onerror=null; this.src='house.png'"
+                                class="beneficios-img"
+                            />
+                        </div>
+                        <div class="beneficios-text">
+                            <h3>Valorização</h3>
+                            <p>
+                                Com a instalação das placas fotovoltaicas, seu
+                                imóvel pode ter uma valorização patrimonial.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="beneficios__container__cards__card">
+                        <div class="beneficios-icon">
+                            <img
+                                src="./images/garantee.svg"
+                                alt="Ícone garantia"
+                                onerror="this.onerror=null; this.src='garantee.png'"
+                                class="beneficios-img"
+                            />
+                        </div>
+                        <div class="beneficios-text">
+                            <h3>Garantia</h3>
+                            <p>
+                                Os sistemas de placas fotovoltaicos têm uma
+                                duração média de 25 anos de geração de energia.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="beneficios__container__cards__card">
+                        <div class="beneficios-icon">
+                            <img
+                                src="./images/manutencao.svg"
+                                alt="Ícone manutenção"
+                                onerror="this.onerror=null; this.src='manutencao.png'"
+                                class="beneficios-img"
+                            />
+                        </div>
+                        <div class="beneficios-text">
+                            <h3>Manutenção mínima</h3>
+                            <p>
+                                A limpeza dos painéis podem ser feitas apenas
+                                duas vezes ao ano - e a própria água da chuva
+                                realiza.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="beneficios__container__cards__card">
+                        <div class="beneficios-icon">
+                            <img
+                                src="./images/lamp.svg"
+                                alt="Ícone lâmpada"
+                                onerror="this.onerror=null; this.src='lamp.png'"
+                                class="beneficios-img"
+                            />
+                        </div>
+                        <div class="beneficios-text">
+                            <h3>Economia</h3>
+                            <p>
+                                Você economiza no consumo e protege do aumento
+                                das tarifas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="beneficios__container__cards__card">
+                        <div class="beneficios-icon">
+                            <img
+                                src="./images/investiment.svg"
+                                alt="Ícone investimento"
+                                onerror="this.onerror=null; this.src='investimento.png'"
+                                class="beneficios-img"
+                            />
+                        </div>
+                        <div class="beneficios-text">
+                            <h3>Retorno</h3>
+                            <p>
+                                Retorno sobre investimento entre 3 (três) e 7
+                                (sete) anos..
+                            </p>
+                        </div>
+                    </div>
+                    <div class="beneficios__container__cards__card">
+                        <div class="beneficios-icon">
+                            <img
+                                src="./images/industria.svg"
+                                alt="Ícone indústria"
+                                onerror="this.onerror=null; this.src='industria.png'"
+                                class="beneficios-img"
+                            />
+                        </div>
+                        <div class="beneficios-text">
+                            <h3>Empresarial ou industrial</h3>
+                            <p>
+                                O sistema pode ser instalado em âmbito
+                                empresarial e/ou residencial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="como-funcionam" id="como-funcionam">
+            <div class="como-funcionam__container">
+                <div class="como-funcionam__container__title">
+                    <h1>Como as placas funcionam?</h1>
+                </div>
+
+                <div class="como-funcionam__container__description">
+                    <div class="como-funcionam__container__description__img">
+                        <img
+                            src="./images/how-works.png"
+                            alt="Desenho de uma casa com placas fotovoltaicas"
+                            class="como-funcionam-img"
+                        />
+                    </div>
+
+                    <div class="como-funcionam__container__description__text">
+                        <div
+                            class="
+                                como-funcionam__container__description__text__right
+                            "
+                        >
+                            <img
+                                src="./images/number-01.svg"
+                                alt="1"
+                                onerror="this.onerror=null; this.src='number-01.png'"
+                                class="como-funcionam-img"
+                            />
+                            <p>
+                                Nessa etapa é onde ocorre a primeira
+                                transformação: os raios solares são refletidos
+                                nas células fotovoltaicas, e transformados em
+                                energia elétrica corrente contínua
+                            </p>
+                        </div>
+                        <div
+                            class="
+                                como-funcionam__container__description__text__right
+                            "
+                        >
+                            <img
+                                src="./images/number-02.svg"
+                                alt="2"
+                                onerror="this.onerror=null; this.src='number-02.png'"
+                                class="como-funcionam-img"
+                            />
+                            <p>
+                                Em seguida a energia elétrica corrente contínua
+                                é transformada em corrente alternada (compatível
+                                com a rede elétrica) pelo inversor.
+                            </p>
+                        </div>
+                        <div
+                            class="
+                                como-funcionam__container__description__text__right
+                            "
+                        >
+                            <img
+                                src="./images/number-03.svg"
+                                alt="3"
+                                onerror="this.onerror=null; this.src='number-03.png'"
+                                class="como-funcionam-img"
+                            />
+                            <p>
+                                Agora os equipamentos elétricos da residência
+                                podem usufruir de energia fotovoltaica,
+                                altamente sustentável.
+                            </p>
+                        </div>
+                        <div
+                            class="
+                                como-funcionam__container__description__text__right
+                            "
+                        >
+                            <img
+                                src="./images/number-04.svg"
+                                alt="4"
+                                onerror="this.onerror=null; this.src='number-04.png'"
+                                class="como-funcionam-img"
+                            />
+                            <p>
+                                Caso a energia gerada seja maior que o consumo
+                                no mesmo momento, ela é injetada na rede da
+                                concessionária. Com isso, a unidade consumidora
+                                acumulará créditos para serem utilizados nas
+                                próximas faturas
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="simule" id="simule">
+            <div class="simule__container">
+                <h1>Simule gratuitamente agora mesmo!</h1>
+                <h3>
+                    Saiba quanto você irá investir e economizar com os nossos
+                    sistemas
+                </h3>
+                <button>
+                    <a href="/simulacao">Faça uma simulação</a>
+                </button>
+            </div>
+        </section>
+
+        <section class="portfolio">
+            <h1 class="portfolio__title">O que nossos clientes acham?</h1>
+            <h3>Clique em "ver mais" para ver as declarações completas!</h3>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonialBox">
+                            <img
+                                src="./images/aspas.png"
+                                alt=""
+                                class="quote"
+                            />
+                            <div class="content">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolore numquam deserunt
+                                    tenetur accusamus veritatis, nisi corrupti
+                                    sapiente! Deleniti enim sequi quaerat animi
+                                    repellat, explicabo veritatis rerum odio,
+                                    cum tenetur fuga.
+                                </p>
+
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <img
+                                            src="./images/person-test.jpg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <h3>
+                                        Someone Famous <br /><span
+                                            >Creative Designer</span
+                                        >
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-anchor">
+                                <a href="/portfolio">Ver mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonialBox">
+                            <img
+                                src="./images/aspas.png"
+                                alt=""
+                                class="quote"
+                            />
+                            <div class="content">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolore numquam deserunt
+                                    tenetur accusamus veritatis, nisi corrupti
+                                    sapiente! Deleniti enim sequi quaerat animi
+                                    repellat, explicabo veritatis rerum odio,
+                                    cum tenetur fuga.
+                                </p>
+
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <img
+                                            src="./images/person-test.jpg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <h3>
+                                        Someone Famous <br /><span
+                                            >Creative Designer</span
+                                        >
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-anchor">
+                                <a href="/portfolio">Ver mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonialBox">
+                            <img
+                                src="./images/aspas.png"
+                                alt=""
+                                class="quote"
+                            />
+                            <div class="content">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolore numquam deserunt
+                                    tenetur accusamus veritatis, nisi corrupti
+                                    sapiente! Deleniti enim sequi quaerat animi
+                                    repellat, explicabo veritatis rerum odio,
+                                    cum tenetur fuga.
+                                </p>
+
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <img
+                                            src="./images/person-test.jpg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <h3>
+                                        Someone Famous <br /><span
+                                            >Creative Designer</span
+                                        >
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-anchor">
+                                <a href="/portfolio">Ver mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonialBox">
+                            <img
+                                src="./images/aspas.png"
+                                alt=""
+                                class="quote"
+                            />
+                            <div class="content">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolore numquam deserunt
+                                    tenetur accusamus veritatis, nisi corrupti
+                                    sapiente! Deleniti enim sequi quaerat animi
+                                    repellat, explicabo veritatis rerum odio,
+                                    cum tenetur fuga.
+                                </p>
+
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <img
+                                            src="./images/person-test.jpg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <h3>
+                                        Someone Famous <br /><span
+                                            >Creative Designer</span
+                                        >
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-anchor">
+                                <a href="/portfolio">Ver mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonialBox">
+                            <img
+                                src="./images/aspas.png"
+                                alt=""
+                                class="quote"
+                            />
+                            <div class="content">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Dolore numquam deserunt
+                                    tenetur accusamus veritatis, nisi corrupti
+                                    sapiente! Deleniti enim sequi quaerat animi
+                                    repellat, explicabo veritatis rerum odio,
+                                    cum tenetur fuga.
+                                </p>
+
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <img
+                                            src="./images/person-test.jpg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <h3>
+                                        Someone Famous <br /><span
+                                            >Creative Designer</span
+                                        >
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-anchor">
+                                <a href="/portfolio">Ver mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contato" id="contato">
+            <div class="contato__container">
+                <div class="contato__container__inside">
+                    <div class="contato__container__inside__infos">
+                        <div class="contato__container__inside__infos__form">
+                            <h1>Vamos conversar?</h1>
+
+                            <form action="">
+                                <div class="nome">
+                                    <label for="name" class="label">Nome</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        placeholder="Seu nome"
+                                        class="input"
+                                    />
+                                </div>
+
+                                <div class="email">
+                                    <label for="email" class="label"
+                                        >E-mail</label
+                                    >
+                                    <input
+                                        type="text"
+                                        name="email"
+                                        id="email"
+                                        placeholder="seu@email.com"
+                                        class="input"
+                                    />
+                                </div>
+
+                                <div class="verificacao">
+                                    <label for="">Verificação</label>
+                                    <input
+                                        type="checkbox"
+                                        name="verificacao"
+                                        id="verificacao"
+                                    />
+                                    <span class="checkmark"></span>
+                                    <span for="" class="label"
+                                        >Não sou um robô.</span
+                                    >
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="contato__container__inside__msg">
+                        <div class="contato__container__inside__msg__message">
+                            <label for="" class="label">Mensagem</label>
+                            <textarea
+                                placeholder="Escreva sua mensagem aqui..."
+                                id="textarea"
+                                class="textarea"
+                            ></textarea>
+                        </div>
+                        <button type="submit" class="contato-btn">
+                            Enviar mensagem
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__container__logo">
+                    <div class="footer__container__logo__inside">
+                        <img
+                            src="./images/logo-nobg-white 1.svg"
+                            alt="Logo Interface"
+                        />
+                    </div>
+                </div>
+
+                <div class="footer__container__menu">
+                    <div class="footer__container__menu__inside">
+                        <ul class="footer-menu-bar">
+                            <li class="footer-menu-item">Home</li>
+
+                            <li class="footer-menu-item">Sobre</li>
+
+                            <li class="footer-menu-item">Benefícios</li>
+                            <li class="footer-menu-item">Como funciona</li>
+
+                            <li class="footer-menu-item">Simulador</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer__container__redes-sociais">
+                    <div class="footer__container__redes-sociais__inside">
+                        <h4>Siga-nos</h4>
+                        <div class=""></div>
+                        <div class=""></div>
+                        <div class="rede-social__container">
+                            <div class="rede-social">
+                                <img
+                                    src="./images/facebook.png"
+                                    alt="Facebook"
+                                    class="footer-img"
+                                />
+                                <span>/interfacesustentavel</span>
+                            </div>
+                            <div class="rede-social">
+                                <img
+                                    src="./images/instagram.png"
+                                    alt="Instagram"
+                                    class="footer-img"
+                                />
+                                <span>@interfacesustentavel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__container__contato">
+                    <div class="footer__container__contato__inside">
+                        <h4>Contato</h4>
+                        <div class="rede-social">
+                            <img
+                                src="./images/whatsapp.png"
+                                alt="WhatsApp"
+                                class="footer-img"
+                            />
+                            <span>(44) 9 9999-9999</span>
+                        </div>
+                        <div class="rede-social">
+                            <img
+                                src="./images/email.png"
+                                alt="E-mail"
+                                class="footer-img"
+                            />
+                            <span>contato@interface.com.br</span>
+                        </div>
+                        <div class="endereco">
+                            <p>Av. John Kennedy, 565, Paranavaí - PR</p>
+                            <p>CEP 87705-370</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__copy">&copy Desenvolvido por</div>
+        </footer>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
+            integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"
+            integrity="sha512-jNJOCd1PIjJoUa1XTDKaPdBLNUe4OJTrltKG+70O5ghYZ943nTRGIzjObwC2JtSm1fG7T06GbUApR2eirIU/jA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+
+        <script src="./scripts/preloader.js"></script>
+        <script src="./scripts/header.js"></script>
+        <script src="./scripts/portfolioSection.js"></script>
+
+        <script src="./scripts/footer.js"></script>
+
+        <script src="./scripts/gsap.js"></script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    overflow-x: hidden;
+
+}
+
+::-webkit-scrollbar {
+    width: 0.6rem;
+
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.589);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(29, 153, 167, 0.76);
+
+    border-radius: 10px;
+  }
+

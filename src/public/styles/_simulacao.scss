@@ -1,0 +1,406 @@
+.simulador {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+
+    &__container {
+        width: 1200px;
+        height: 100%;
+        margin-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &__title {
+            margin-top: 6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-self: center;
+
+            h3 {
+                font-size: $h2;
+                color: $dark-grey;
+            }
+
+            h5 {
+                font-size: $h3;
+                margin-top: 1rem;
+                color: $dark-navy;
+
+
+            }
+
+            p {
+                font-size: $h5;
+                margin-top: 1rem;
+
+            }
+        }
+
+        &__form__container {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            
+            &__form-container {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                form {
+    
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin-top: 4rem;
+    
+                    label {
+                        font-size: $h5;
+                        color: $light-grey;
+                        font-weight: 300;
+                        display: block;
+                    }
+    
+                    input {
+                        width: 80%;
+                        border: none;
+                        background: transparent;
+                        height: $h5;
+                        font-size: $h5;
+                        margin: 2rem;
+                        font-weight: bold;
+                        color: $dark-grey;
+                        border-bottom: 2px solid $normal-navy;
+    
+                        &::placeholder {
+                            color: $dark-white;
+                        }
+    
+                        &:focus {
+                            outline: none;
+                        }
+    
+                    }
+    
+                    button {
+                        width: 80%;
+                        height: 4rem;
+                        margin: 1rem 0 6rem;
+                        border: none;
+                        background-color: $dark-navy;
+                        color: $normal-white;
+                        font-size: $h5;
+                        cursor: pointer;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        box-shadow: -1px 1px 10px 4px rgba(0, 0, 0, 0.35);
+                        transition: all ease-in-out 0.3s;
+    
+                        &:hover {
+                            box-shadow: -1px 1px 12px 4px rgb(0, 0, 0);
+                            background-color: $normal-navy;
+
+                        }
+    
+                    }
+                }
+            }
+        }
+        
+        &__resultado {
+            > h3 {
+                font-size: $h2;
+                color: $dark-navy;
+                text-align: center;
+            }
+
+            &__infos {
+                margin: 2rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                &__info {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-self: center;
+
+                    > h4 {
+                        font-weight: 400;
+                    }
+
+                    p {
+
+                        span {
+                            margin-right: 0.2rem;
+                            font-size: $h3;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            // > canvas {
+            //     width: 400px;
+            //     height: 400px;
+            // }
+
+            &__disclaimer {
+                font-size: 0.9rem;
+            }
+
+            &__valores {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                margin: 2rem 0;
+
+                .card {
+
+                    > p {
+                        font-size: 1rem;
+                    }
+
+                    &__valor {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid $light-navy;
+                        margin: 1rem 0;
+                        padding: 1rem;
+                        border-radius: 24px;
+
+                        .valor-min, .valor-max {
+                            font-weight: 600;
+                            margin: 0 0.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    .simulador {
+    
+        &__container {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 2rem;
+
+            &__title {
+                margin-top: 4rem;
+
+                h3 {
+                    font-size: $h3;
+                }
+    
+                h5 {
+                    font-size: $h4;
+                }
+    
+                p {
+                    font-size: $h6;
+                }
+            }
+    
+            &__form__container {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                
+                &__form-container {
+
+                    form {
+                        margin-top: 2rem;
+        
+                        label {
+                            font-size: $h6;
+                        }
+        
+                        input {
+                            width: 60%;
+                            height: $h6;
+                            font-size: $h6;
+                            margin: 1rem;
+       
+                        }
+        
+                        button {
+                            width: 60%;
+                            height: 3rem;
+                            font-size: $h6;       
+                        }
+                    }
+                }
+
+                &__img {
+                    display: none;
+                }
+            }
+            
+            &__resultado {
+                padding: 0 2rem;
+
+                > h3 {
+                    font-size: $h3;
+                }
+    
+                &__infos {
+                    margin: 1rem 0;
+    
+                    &__info {
+    
+                        > h4 {
+                            font-weight: 400;
+                        }
+    
+                        p {
+    
+                            span {
+                                margin-right: 0.1rem;
+                                font-size: $h4;
+                            }
+                        }
+                    }
+                }
+    
+                // > canvas {
+                //     width: 400px;
+                //     height: 400px;
+                // }
+    
+                &__disclaimer {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .simulador {
+    
+        &__container {
+            width: 100%;
+            margin-bottom: 2rem;
+
+            &__title {
+                margin-top: 2rem;
+                text-align: center;
+
+                h3 {
+                    font-size: $h4;
+                }
+    
+                h5 {
+                    font-size: $h5;
+                }
+    
+                p {
+                    font-size: $h6;
+                }
+            }
+    
+            &__form__container {
+                
+                &__form-container {
+
+                    form {
+                        margin-top: 2rem;
+        
+                        input {
+                            width: 70%;
+
+       
+                        }
+        
+                        button {
+                            width: 70%;
+                        }
+                    }
+                }
+
+            }
+            
+            &__resultado {
+                width: 100%;
+                padding: 0 2rem;
+
+                > h3 {
+                    font-size: $h4;
+                }
+    
+                &__infos {
+                    margin: 1rem 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    justify-content: center;
+    
+                    &__info {
+                        margin: 0.5rem 1rem;
+    
+                        p {
+                            span {
+                                font-size: $h6;
+                            }
+                        }
+                    }
+                }
+    
+                // > canvas {
+                //     width: 400px;
+                //     height: 400px;
+                // }
+                &__valores {
+                    flex-direction: column;
+                    
+                    .card {
+                        width: 100%;
+                        height: 100%;
+                        
+                        &__valor {
+                            width: 100%;
+                            margin: 1rem 0;
+                            padding: 0;
+    
+                            .valor-min, .valor-max {
+                                font-weight: 600;
+                                font-size: $h5;
+                                margin: 0.5rem 0.2rem;
+                            }
+                        }
+                    }
+                }
+    
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $x-sm) {
+    .simulador__container__resultado {
+        &__infos {
+            flex-direction: column;
+
+            &__info {
+                margin: 0.5rem 0;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

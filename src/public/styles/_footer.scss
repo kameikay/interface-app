@@ -1,0 +1,417 @@
+.footer {
+    width: 100%;
+    height: 280px;
+    background-color: $dark-grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        width: 1200px;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        &__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__inside {
+                height: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                padding-right: 28px;
+                border-right: 2px solid $light-navy;
+            }
+        }
+
+        &__menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 300px;
+
+            &__inside {
+                height: 80%;
+                display: flex;
+
+                padding-right: 90px;
+                border-right: 2px solid $light-navy;
+
+                .footer-menu-bar {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-around;
+
+                    .footer-menu-item {
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: $normal-white;
+                        font-weight: 500;
+                        transition: all ease-in-out 0.3s;
+                        cursor: pointer;
+
+                        &:hover {
+                            font-weight: 600;
+                            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+                            color: $light-navy;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__redes-sociais {
+            display: flex;
+            align-items: center;
+            justify-self: center;
+
+            &__inside {
+                height: 80%;
+                border-right: 2px solid $light-navy;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-right: 2rem;
+
+                h4 {
+                    margin-top: 11px;
+                    color: $normal-white;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+
+                .rede-social__container {
+                    margin-top: 50px;
+                    height: 6rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                }
+            }
+        }
+
+        &__contato {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__inside {
+                h4 {
+                    color: $normal-white;
+                    text-transform: uppercase;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-around;
+                height: 80%;
+            }
+            .endereco {
+                color: $normal-white;
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+    }
+
+    &__copy {
+        width: 100%;
+        height: 2rem;
+        text-align: center;
+        color: $light-navy;
+        font-weight: 500;
+    }
+}
+
+.rede-social {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .footer-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    span {
+        padding: 1rem;
+
+        color: $normal-white;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: $bg) {
+    .footer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+
+        &__container {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            &__logo {
+                margin-top: 2rem;
+
+                &__inside {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    padding-right: 0;
+                    border-right: none;
+                }
+            }
+
+            &__menu {
+                margin-top: 2rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+
+                &__inside {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    padding-right: 0;
+                    border-right: none;
+
+                    .footer-menu-bar {
+
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        .footer-menu-item {
+                            a {
+                                margin: 1rem;
+                                text-decoration: none;
+                                text-transform: uppercase;
+                                color: $normal-white;
+                                font-weight: 500;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__redes-sociais {
+                margin-top: 2rem;
+                display: flex;
+                align-items: center;
+                justify-self: center;
+
+                h4 {
+                    display: none;
+                }
+
+                &__inside {
+                    height: 100%;
+                    border-right: none;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding-right: 0;
+
+                    h4 {
+                        margin-top: 0;
+                        color: $normal-white;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+
+                    .rede-social__container {
+                        margin-top: 0;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: space-around;
+                    }
+                }
+            }
+
+            &__contato {
+                margin-top: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &__inside {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+
+                    h4 {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .rede-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .footer-img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .footer {
+        &__container {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            &__logo {
+                margin-top: 2rem;
+
+                &__inside {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    padding-right: 0;
+                    border-right: none;
+                }
+            }
+
+            &__menu {
+                margin-top: 2rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+
+                &__inside {
+                    .footer-menu-bar {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        .footer-menu-item {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            li {
+                                margin: 0;
+
+                                a {
+                                    margin: 0;
+                                    padding-top: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__redes-sociais {
+                margin-top: 2rem;
+                display: flex;
+                align-items: center;
+                justify-self: center;
+
+                h4 {
+                    display: none;
+                }
+
+                &__inside {
+                    height: 100%;
+                    border-right: none;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding-right: 0;
+
+                    h4 {
+                        margin-top: 0;
+                        color: $normal-white;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+
+                    .rede-social__container {
+                        margin-top: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: space-around;
+                    }
+                }
+            }
+
+            &__contato {
+                margin-top: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &__inside {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+
+                    h4 {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .rede-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .footer-img {
+            width: $h6;
+            height: $h6;
+        }
+    }
+}
