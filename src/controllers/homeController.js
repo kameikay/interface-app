@@ -1,3 +1,5 @@
 exports.homePage = (request, response) => {
-    response.render('index')
+    response.render('index', {
+        title: 'Interface | Soluções Inteligentes'
+    })
 }
