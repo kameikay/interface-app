@@ -1,54 +1,12 @@
 <%- include('includes/head')%>
 
     <body>
-        <!-- PRELOADER -->
-        <div class="loader-wrapper">
-            <div class="loader"></div>
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
-        </div>
 
-        <!-- FIM PREALODER -->
-        <header class="header">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="/"
-                        ><img
-                            src="./images/logo-navbar.png"
-                            alt=""
-                            class="logo-img"
-                    /></a>
-                </div>
+        <%- include('includes/preloader') %>
 
-                <div class="menu-mobile">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+        <%- include('includes/header') %>
 
-                <ul class="menu-items">
-                    <li class="menu-item">Home</li>
-                    <li class="menu-item">Sobre</li>
-                    <li class="menu-item">Benefícios</li>
-                    <li class="menu-item">Como funciona</li>
-                    <li class="menu-item">Simulador</li>
-                    <li class="menu-item">Portfólio</li>
-                    <li class="menu-item">Contato</li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="whatsapp-btn">
-            <a
-                href="https://web.whatsapp.com/send?phone=5541995817916"
-                target="_blank"
-            >
-                <img
-                    src="./images/whatsapp-icon-cta.png"
-                    alt=""
-                    class="whatsapp-icon-cta"
-            /></a>
-        </div>
+        <%- include('includes/whatsapp-button') %>
 
         <section class="hero" id="hero">
             <div class="hero-section">
@@ -622,7 +580,7 @@
                         <div class="contato__container__inside__infos__form">
                             <h1>Vamos conversar?</h1>
 
-                            <form action="">
+                            <form action="" method="POST" id="contact-form">
                                 <div class="nome">
                                     <label for="name" class="label">Nome</label>
                                     <input
@@ -653,8 +611,8 @@
                                         type="checkbox"
                                         name="verificacao"
                                         id="verificacao"
+                                        required
                                     />
-                                    <span class="checkmark"></span>
                                     <span for="" class="label"
                                         >Não sou um robô.</span
                                     >
@@ -666,13 +624,14 @@
                     <div class="contato__container__inside__msg">
                         <div class="contato__container__inside__msg__message">
                             <label for="" class="label">Mensagem</label>
-                            <textarea
+                            <textarea form="contact-form"
                                 placeholder="Escreva sua mensagem aqui..."
                                 id="textarea"
                                 class="textarea"
+                                name="message"
                             ></textarea>
                         </div>
-                        <button type="submit" class="contato-btn">
+                        <button type="submit" class="contato-btn" form="contact-form">
                             Enviar mensagem
                         </button>
                     </div>

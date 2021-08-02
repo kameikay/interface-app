@@ -26,6 +26,11 @@
 
                 padding-right: 28px;
                 border-right: 2px solid $light-navy;
+
+                > img {
+                    width: 176px;
+                    height: 54px;
+                }
             }
         }
 
@@ -50,18 +55,23 @@
                     justify-content: space-around;
 
                     .footer-menu-item {
-                        text-decoration: none;
-                        text-transform: uppercase;
-                        color: $normal-white;
-                        font-weight: 500;
-                        transition: all ease-in-out 0.3s;
-                        cursor: pointer;
 
+                        > a {
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            color: $normal-white;
+                            font-weight: 500;
+                            transition: all ease-in-out 0.3s;
+                            cursor: pointer;
+                            
                         &:hover {
                             font-weight: 600;
                             text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
                             color: $light-navy;
                         }
+                        }
+
+
                     }
                 }
             }

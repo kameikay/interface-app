@@ -1,0 +1,259 @@
+.about-us {
+    background-color: $normal-white;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &__container {
+        display: flex;
+        width: 1200px;
+        flex-direction: column;
+        justify-content: center;
+
+        &__what-we-want {
+            width: 520px;
+            padding: 8rem 0 4rem;
+
+            > h1 {
+                text-transform: uppercase;
+                font-size: $h1;
+                .blue {
+                    color: $normal-navy;
+                }
+
+                .green {
+                    color: $normal-green;
+                }
+
+                &::after {
+                    content: "";
+                    background-color: $normal-green;
+                    display: block;
+                    height: 3px;
+                    width: 50%;
+                    margin: 1rem 0;
+                }
+            }
+
+            > h5 {
+                font-size: $h5;
+                font-weight: 300;
+            }
+        }
+
+        &__what-we-do {
+            margin-top: 4rem;
+
+            > h2 {
+                font-size: $h2;
+                text-transform: uppercase;
+
+                &::after {
+                    content: "";
+                    background-color: $normal-green;
+                    display: block;
+                    height: 3px;
+                    width: 160px;
+                    margin: 1rem 0;
+                }
+            }
+
+            &__container {
+                display: flex;
+                position: relative;
+
+                &__squares {
+                    width: 460px;
+                    height: 100%;
+                    display: flex;
+                    background: transparent;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 2rem;
+
+                    &__square {
+                        box-shadow: -5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+                        margin: 1rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                &__card {
+                    width: 540px;
+                    height: 720px;
+                    padding: 4rem;
+                    background-color: #fff;
+                    box-shadow: -5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+
+                    position: absolute;
+                    top: -60%;
+                    right: 0;
+
+                    > h2 {
+                        width: 126px;
+                        text-transform: uppercase;
+                        font-size: $h2;
+
+                        &::after {
+                            content: "";
+                            background-color: $normal-green;
+                            display: block;
+                            height: 3px;
+                            width: 80px;
+                            margin: 1rem 0;
+                        }
+                    }
+
+                    > p {
+                        margin-top: 3rem;
+                    }
+                }
+            }
+
+            > p {
+                margin-top: 4rem;
+            }
+        }
+
+        &__why-interface {
+            margin: 4rem 0;
+
+            > h2 {
+                font-size: $h2;
+                text-transform: uppercase;
+
+                &::after {
+                    content: "";
+                    background-color: $normal-green;
+                    display: block;
+                    height: 3px;
+                    width: 20%;
+                    margin: 1rem 0;
+                }
+            }
+
+            &__container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &__text {
+                    width: 600px;
+
+                    > p {
+                        margin: 2rem 0;
+                    }
+                }
+            }
+        }
+
+        &__objectives {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &__objective {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                margin-top: 4rem;
+
+                &__card {
+                    width: 300px;
+                    height: 300px;
+                    background-color: #fff;
+                    box-shadow: -5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 6rem;
+                }
+
+                .missao {
+                    position: absolute;
+                    top: -70%;
+                    z-index: 9;
+                }
+
+                > p {
+                    width: 600px;
+                }
+            }
+        }
+
+        &__founder {
+            margin: 6rem 0;
+
+            > h2 {
+                font-size: $h2;
+                text-transform: uppercase;
+
+                &::after {
+                    content: "";
+                    background-color: $normal-green;
+                    display: block;
+                    height: 3px;
+                    width: 112px;
+                    margin: 1rem 0;
+                }
+            }
+
+            &__container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &__card {
+                    width: 360px;
+                    height: 540px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: -5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+                    border-radius: 10px;
+
+                    .image {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        > img {
+                            width: 320px;
+                            height: 320px;
+                            border-radius: 999px;
+                        }
+                    }
+
+                    > h2 {
+                        font-size: $h2;
+                        text-transform: uppercase;
+                        margin-top: 24px;
+                    }
+
+                    > p {
+                        width: 320px;
+                        margin-top: 24px;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about-us-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
