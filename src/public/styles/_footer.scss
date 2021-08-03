@@ -162,6 +162,10 @@
     }
 }
 
+.footer__copy {
+    margin-top: 1rem;
+}
+
 @media screen and (max-width: $bg) {
     .footer {
         width: 100%;
@@ -424,4 +428,6 @@
             height: $h6;
         }
     }
+
+
 }
