@@ -1,0 +1,82 @@
+.login-section {
+    background: url("../images/login-bg.jpg") no-repeat center/cover;
+    // filter: brightness(0.5);
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 540px;
+        height: 640px;
+
+        background: rgba( 255, 255, 255, 0.30 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 3.5px );
+        -webkit-backdrop-filter: blur( 3.5px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        
+        > img {
+            width: 240px;
+        }
+
+        > form {
+            margin: 4rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            > label {
+                text-transform: uppercase;
+                font-size: $h5;
+                font-weight: 600;
+                color: $dark-navy;
+                margin: 1rem 0;
+            }
+
+            > input {
+                border: 1px solid $dark-navy;
+                border-radius: 99px;
+                height: 2rem;
+                width: 100%;
+                font-size: $h6;
+                padding: 0.5rem;
+                
+                &:focus {
+                    outline: none;
+                    border: 2px solid $normal-navy;
+
+                }
+            }
+
+            > button {
+                width: 100%;
+                margin: 2rem 0;
+                font-size: $h5;
+                font-weight: 600;
+                background-color: $normal-green;
+                border-radius: 99px;
+                border: none;
+                text-transform: uppercase;
+                padding: 0.5rem;
+                color: $normal-white;
+                cursor: pointer;
+                transition: all ease 0.3s;
+
+                &:hover {
+                    background-color: $dark-green;
+
+                }
+            }
+        }
+    }
+}
