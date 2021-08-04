@@ -1,4 +1,5 @@
 const menuMobile = document.querySelector(".menu-mobile");
+const menuMobileSpan = document.querySelectorAll(".menu-mobile span");
 const menuItems = document.querySelector(".menu-items");
 const menuLinks = document.querySelectorAll(".menu-items li");
 const menuAnchor = document.querySelectorAll(".menu-items li a");
@@ -24,6 +25,8 @@ if (title === "Interface | Soluções Inteligentes" || title === "Interface | Lo
     menuAnchor[0].style.borderBottom = "3px solid #64B42D";
 } else {
     menuAnchor.forEach((e) => (e.style.color = "#1d99a7"));
+    menuMobileSpan.forEach((e) => (e.style.background = "#1d99a7"));
+
 }
 
 if (title === "Interface | Sobre nós") {
@@ -40,6 +43,8 @@ window.addEventListener("scroll", () => {
     if (window.pageYOffset > 72) {
         header.style.background = "rgba(28, 49, 55, 0.30)";
         menuAnchor.forEach((e) => (e.style.color = "#fdfdfd"));
+        menuMobileSpan.forEach((e) => (e.style.background = "#fdfdfd"));
+
     }
 
     if (window.pageYOffset === 0) {
@@ -47,6 +52,8 @@ window.addEventListener("scroll", () => {
 
         if (title !== "Interface | Soluções Inteligentes") {
             menuAnchor.forEach((e) => (e.style.color = "#1d99a7"));
+            menuMobileSpan.forEach((e) => (e.style.background = "#1d99a7"));
+            
         }
     }
 });
