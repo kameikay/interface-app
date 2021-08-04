@@ -19,8 +19,11 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const routes = require("./routes");
-// const helmet = require('helmet')
-// const csrf = require('csurf')
+const csrf = require("csurf");
+const {
+    checkCsrfError,
+    csrfMiddleware,
+} = require("./src/middlewares/middleware");
 
 const sessionOptions = session({
     secret: "1jh23@dj!k973pgnwb1%",
@@ -33,10 +36,9 @@ const sessionOptions = session({
     saveUninitialized: true,
 });
 
-// server.use(sessionOptions);
-// server.use(flash());
+server.use(sessionOptions);
+server.use(flash());
 
-// server.use(helmet())
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 
@@ -45,7 +47,9 @@ server.use(express.static(path.resolve(__dirname, "src", "public")));
 server.set("views", path.resolve(__dirname, "src", "views"));
 server.set("view engine", "ejs");
 
-// server.use(csrf())
+server.use(csrf());
+server.use(checkCsrfError);
+server.use(csrfMiddleware);
 server.use(routes);
 
 server.on("Database OK 👌", () => {

@@ -581,6 +581,7 @@
                             <h1>Vamos conversar?</h1>
 
                             <form action="" method="POST" id="contact-form">
+                                <input type="hidden" name="_csrf" value="<%=csrfToken %>">
                                 <div class="nome">
                                     <label for="name" class="label">Nome</label>
                                     <input

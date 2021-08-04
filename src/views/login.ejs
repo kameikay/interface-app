@@ -10,6 +10,8 @@
             <div class="login-container">
                 <img src="./images/brand Interface-05.png" alt="">
                 <form action="" id="login" method="POST">
+                    <input type="hidden" name="_csrf" value="<%=csrfToken %>">
+
                     <label for="username">Usuário:</label>
                     <input type="text" name="username">
     

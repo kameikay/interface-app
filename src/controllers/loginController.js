@@ -12,5 +12,6 @@ exports.loginForm = (request, response) => {
 };
 
 exports.login = (request, response) => {
+    const login = new LoginModel(req.body)
     console.log(request.body);
 };
