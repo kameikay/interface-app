@@ -6,6 +6,7 @@ const aboutController = require("./src/controllers/aboutController");
 const simuladorController = require("./src/controllers/simuladorController");
 const portfolioController = require("./src/controllers/portfolioController");
 const loginController = require("./src/controllers/loginController");
+const errorController = require('./src/controllers/errorController')
 
 
 route.get("/", homeController.homePage);
@@ -29,5 +30,9 @@ route.delete("/case/:id", portfolioController.delete)
 
 route.get("/login", loginController.loginForm);
 route.post("/login", loginController.login);
+
+
+route.get('/404', errorController.errorPage);
+
 
 module.exports = route;

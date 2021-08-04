@@ -2990,4 +2990,90 @@ label {
 }
 .login-section .login-container > form > button:hover {
   background-color: #4C8B20;
+}
+
+.error-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-section .error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-section .error-container .error-text {
+  width: 30%;
+}
+.error-section .error-container .error-text > h1 {
+  background: linear-gradient(90deg, #1d99a7 0%, #7eced7 50%, #94d567 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 4.5rem;
+}
+.error-section .error-container .error-text > p {
+  font-size: 1.25rem;
+  padding: 2rem 0;
+  width: 80%;
+}
+.error-section .error-container .error-image > img {
+  width: 720px;
+  height: 567px;
+}
+
+@media screen and (max-width: 1200px) {
+  .error-section .error-container {
+    width: 768px;
+    flex-direction: column;
+  }
+  .error-section .error-container .error-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .error-section .error-container .error-text > h1 {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+  .error-section .error-container .error-text > p {
+    font-size: 1.25rem;
+    padding: 2rem 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .error-section .error-container {
+    width: 100%;
+    padding: 0 1rem;
+    position: relative;
+  }
+  .error-section .error-container .error-text {
+    z-index: 99;
+  }
+  .error-section .error-container .error-text > h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .error-section .error-container .error-text > p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding: 2rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  .error-section .error-container .error-image > img {
+    position: absolute;
+    top: -16%;
+    left: 9%;
+    right: 0;
+    width: 320px;
+    opacity: 0.5;
+  }
 }/*# sourceMappingURL=style.css.map */
