@@ -29,7 +29,8 @@ route.delete("/case/:id", portfolioController.delete)
 
 
 route.get("/login", loginController.loginForm);
-route.post("/login", loginController.login);
+route.post("/login/login", loginController.login);
+route.get('admin', loginController.adminPage)
 
 
 route.get('/404', errorController.errorPage);

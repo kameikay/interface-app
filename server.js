@@ -23,6 +23,7 @@ const csrf = require("csurf");
 const {
     checkCsrfError,
     csrfMiddleware,
+    middlewareError,
 } = require("./src/middlewares/middleware");
 
 const sessionOptions = session({
@@ -48,6 +49,7 @@ server.set("views", path.resolve(__dirname, "src", "views"));
 server.set("view engine", "ejs");
 
 server.use(csrf());
+server.use(middlewareError);
 server.use(checkCsrfError);
 server.use(csrfMiddleware);
 server.use(routes);

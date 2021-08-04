@@ -9,14 +9,13 @@
         <main class="login-section">
             <div class="login-container">
                 <img src="./images/brand Interface-05.png" alt="">
-                <form action="" id="login" method="POST">
+                <form action="/login/login" id="login" method="POST">
                     <input type="hidden" name="_csrf" value="<%=csrfToken %>">
-
+                    <%- include('includes/error') %> 
                     <label for="username">Usuário:</label>
-                    <input type="text" name="username">
-    
+                    <input type="text" name="username" required>
                     <label for="password">Senha:</label>
-                    <input type="password" name="password">
+                    <input type="password" name="password" required>
     
                     <button form="login" type="submit">Entrar</button>
     

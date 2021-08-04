@@ -34,6 +34,15 @@
             align-items: center;
             justify-content: center;
 
+            .error {
+                border-radius: 10px;
+                padding: 1rem;
+                width: 100%;
+                text-align: center;
+                background-color: #9b4454;
+                color: $normal-white;
+            }
+
             > label {
                 text-transform: uppercase;
                 font-size: $h5;
@@ -79,3 +88,5 @@
         }
     }
 }
+
+
