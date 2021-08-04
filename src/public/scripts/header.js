@@ -1,8 +1,9 @@
 const menuMobile = document.querySelector(".menu-mobile");
 const menuItems = document.querySelector(".menu-items");
 const menuLinks = document.querySelectorAll(".menu-items li");
-const header = document.querySelector('header')
-
+const menuAnchor = document.querySelectorAll(".menu-items li a");
+const header = document.querySelector("header");
+const title = document.title;
 
 // Open hamburger menu
 function handlerMenu() {
@@ -14,16 +15,38 @@ menuMobile.addEventListener("click", handlerMenu);
 
 menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
-            handlerMenu();
+        handlerMenu();
     });
 });
 
-window.addEventListener('scroll', () => {
+if (title === "Interface | Soluções Inteligentes") {
+    header.style.background = "transparent";
+    menuAnchor[0].style.borderBottom = '3px solid #64B42D'
+} else {
+    menuAnchor.forEach((e) => (e.style.color = "#1d99a7"));
+}
+
+if (title === 'Interface | Sobre nós') {
+    menuAnchor[1].style.borderBottom = '3px solid #64B42D'
+}
+if (title === 'Interface | Simulação') {
+    menuAnchor[2].style.borderBottom = '3px solid #64B42D'
+}
+if (title === 'Interface | Portfólio') {
+    menuAnchor[3].style.borderBottom = '3px solid #64B42D'
+}
+
+window.addEventListener("scroll", () => {
     if (window.pageYOffset > 72) {
-        header.style.background = 'rgba(28, 49, 55, 0.55)'
+        header.style.background = "rgba(28, 49, 55, 0.30)";
+        menuAnchor.forEach((e) => (e.style.color = "#fdfdfd"));
     }
 
     if (window.pageYOffset === 0) {
-        header.style.background = 'rgba(28, 49, 55, 0.25)'
+        header.style.background = "transparent";
+
+        if (title !== "Interface | Soluções Inteligentes") {
+            menuAnchor.forEach((e) => (e.style.color = "#1d99a7"));
+        }
     }
-})
+});

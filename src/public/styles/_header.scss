@@ -1,13 +1,13 @@
 header {
     width: 100%;
-    background: rgba(28, 49, 55, 0.25);
+    // background: rgba(28, 49, 55, 0.25);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all ease-in-out 0.3s;
     position: fixed;
     z-index: 999;
-
 
     .navbar {
         width: 75rem;
@@ -18,7 +18,6 @@ header {
 
         .logo {
             a {
-
                 .logo-img {
                     width: 251px;
                     height: 56px;
@@ -47,34 +46,33 @@ header {
             display: flex;
 
             li {
-
                 transition: all ease-in-out 0.3s;
                 cursor: pointer;
-                    text-transform: uppercase;
-                    color: $normal-white;
-                    // letter-spacing: 1px;
-                    padding: 16px 20px;
+                text-transform: uppercase;
+                color: $normal-white;
+                letter-spacing: 1px;
+                padding: 16px 20px;
+                font-size: bold;
 
-                    &:hover {
-                        color: $dark-navy;
-                        font-weight: bold;
-                    }
+                &:hover {
+                    color: $dark-navy;
+                    font-weight: bold;
+                }
             }
 
-            
-                a {
-                    transition: all ease-in-out 0.3s;
-                    cursor: pointer;
-                        text-transform: uppercase;
-                        color: $normal-white;
-                        // letter-spacing: 1px;
-    
-                        &:hover {
-                            color: $dark-navy;
-                            font-weight: bold;
-    
-                        }
-                    }
+            a {
+                transition: all ease-in-out 0.3s;
+                cursor: pointer;
+                text-transform: uppercase;
+                color: $normal-white;
+                font-weight: 600;
+                letter-spacing: 1px;
+
+                &:hover {
+                    color: $dark-navy;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
@@ -118,7 +116,6 @@ header {
             li {
                 text-align: center;
                 margin-left: 0 !important;
-
             }
         }
 
@@ -138,11 +135,10 @@ header {
             height: 4rem;
 
             .logo {
-
                 > a {
                     > img {
-                            width: 145px !important;
-                            height: 2rem !important;
+                        width: 145px !important;
+                        height: 2rem !important;
                     }
                 }
             }

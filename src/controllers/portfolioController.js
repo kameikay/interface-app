@@ -3,7 +3,7 @@ const PortfolioRepository = require("../repositories/PortfolioRepository");
 // Render Pages
 exports.portfolioPage = (request, response) => {
     response.render("portfolio", {
-        title: "Interface | Portfolio",
+        title: "Interface | Portfólio",
     });
 };
 

@@ -160,7 +160,7 @@ html {
 
 header {
   width: 100%;
-  background: rgba(28, 49, 55, 0.25);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,7 +202,9 @@ header .navbar .menu-items li {
   cursor: pointer;
   text-transform: uppercase;
   color: #FDFDFD;
+  letter-spacing: 1px;
   padding: 16px 20px;
+  font-size: bold;
 }
 header .navbar .menu-items li:hover {
   color: #115157;
@@ -213,6 +215,8 @@ header .navbar .menu-items a {
   cursor: pointer;
   text-transform: uppercase;
   color: #FDFDFD;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 header .navbar .menu-items a:hover {
   color: #115157;
