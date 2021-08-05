@@ -16,11 +16,6 @@ exports.loginForm = (request, response) => {
     });
 };
 
-exports.adminPage = (request, response) => {
-    response.render("admin", {
-        title: "Interface | Admin",
-    });
-};
 
 exports.login = async (request, response) => {
     try {
@@ -36,7 +31,6 @@ exports.login = async (request, response) => {
         }
 
         request.session.user = login.user;
-        console.log(request.body);
 
         request.session.save(function () {
             return response.render("admin", {
@@ -48,3 +42,8 @@ exports.login = async (request, response) => {
         return response.render("404");
     }
 };
+
+exports.logout = (request, response) => {
+    request.session.destroy()
+    response.redirect('/login')
+}

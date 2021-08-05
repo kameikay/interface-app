@@ -7,6 +7,8 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "@admin-bro/express": "^3.1.0",
+    "admin-bro": "^4.0.1",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^4.4.1",
@@ -14,6 +16,7 @@
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
     "express-session": "^1.17.2",
     "mongoose": "^5.13.5",
     "uuid": "^8.3.2"

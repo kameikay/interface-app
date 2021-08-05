@@ -24,12 +24,12 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.589);
+  background: #FDFDFD;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(29, 153, 167, 0.76);
+  background: rgba(100, 180, 45, 0.7);
   border-radius: 10px;
 }
 
@@ -221,6 +221,7 @@ header .navbar .menu-items a {
 header .navbar .menu-items a:hover {
   color: #115157;
   font-weight: bold;
+  border-bottom: 3px solid #64B42D;
 }
 
 .menu-mobile-open :nth-child(1) {
@@ -2961,10 +2962,11 @@ label {
 }
 .login-section .login-container > form .error {
   border-radius: 10px;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   text-align: center;
-  background-color: #9b4454;
+  background-color: rgba(155, 68, 84, 0.6);
+  border: 2px solid #af1834;
   color: #FDFDFD;
 }
 .login-section .login-container > form > label {

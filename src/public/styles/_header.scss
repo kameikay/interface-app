@@ -71,6 +71,8 @@ header {
                 &:hover {
                     color: $dark-navy;
                     font-weight: bold;
+                    border-bottom: 3px solid #64B42D;
+
                 }
             }
         }

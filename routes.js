@@ -21,19 +21,20 @@ route.get("/simulacao", simuladorController.simuladorPage);
 
 route.get("/portfolio", portfolioController.portfolioPage);
 route.get("/case", portfolioController.showCases);
-route.get("/case", portfolioController.index);
-route.get("/case/:id", portfolioController.show);
-route.post("/case", portfolioController.store);
-route.put("/case/:id", portfolioController.update);
-route.delete("/case/:id", portfolioController.delete)
+// route.get("/case", portfolioController.index);
+// route.get("/case/:id", portfolioController.show);
+// route.post("/case", portfolioController.store);
+// route.put("/case/:id", portfolioController.update);
+// route.delete("/case/:id", portfolioController.delete)
 
 
 route.get("/login", loginController.loginForm);
-route.post("/login/login", loginController.login);
-route.get('admin', loginController.adminPage)
+route.post("/login", loginController.login);
+route.get("/logout", loginController.logout);
 
 
-route.get('/404', errorController.errorPage);
+
+route.get('*', errorController.errorPage);
 
 
 module.exports = route;

@@ -36,10 +36,11 @@
 
             .error {
                 border-radius: 10px;
-                padding: 1rem;
+                padding: 0.5rem;
                 width: 100%;
                 text-align: center;
-                background-color: #9b4454;
+                background-color: rgba(155, 68, 84, 0.6);
+                border: 2px solid #af1834;
                 color: $normal-white;
             }
 

@@ -27,52 +27,52 @@ let portfolio = [
     },
 ];
 
-exports.findAll = () => {
-    return new Promise((resolve) => resolve(portfolio));
-};
+// exports.findAll = () => {
+//     return new Promise((resolve) => resolve(portfolio));
+// };
 
-exports.findById = (id) => {
-    return new Promise((resolve) =>
-        resolve(portfolio.find((caso) => caso.id === id))
-    );
-};
+// exports.findById = (id) => {
+//     return new Promise((resolve) =>
+//         resolve(portfolio.find((caso) => caso.id === id))
+//     );
+// };
 
-exports.delete = (id) => {
-    return new Promise((resolve) => {
-        portfolio = portfolio.filter((caso) => caso.id !== id);
+// exports.delete = (id) => {
+//     return new Promise((resolve) => {
+//         portfolio = portfolio.filter((caso) => caso.id !== id);
 
-        resolve();
-    });
-};
+//         resolve();
+//     });
+// };
 
-exports.create = ({ name, address, description }) => {
-    return new Promise((resolve) => {
-        const newCaso = {
-            id: v4(),
-            name,
-            address,
-            description,
-        };
+// exports.create = ({ name, address, description }) => {
+//     return new Promise((resolve) => {
+//         const newCaso = {
+//             id: v4(),
+//             name,
+//             address,
+//             description,
+//         };
 
-        portfolio.push(newCaso);
+//         portfolio.push(newCaso);
 
-        resolve(newCaso);
-    });
-};
+//         resolve(newCaso);
+//     });
+// };
 
-exports.update = (id, { name, address, description }) => {
-    return new Promise((resolve) => {
-        const updatedCaso = {
-            id,
-            name,
-            address,
-            description,
-        };
+// exports.update = (id, { name, address, description }) => {
+//     return new Promise((resolve) => {
+//         const updatedCaso = {
+//             id,
+//             name,
+//             address,
+//             description,
+//         };
 
-        portfolio = portfolio.map((caso) =>
-            caso.id === id ? updatedCaso : caso
-        );
+//         portfolio = portfolio.map((caso) =>
+//             caso.id === id ? updatedCaso : caso
+//         );
 
-        resolve(updatedCaso);
-    });
-};
+//         resolve(updatedCaso);
+//     });
+// };

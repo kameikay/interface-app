@@ -20,7 +20,7 @@ menuLinks.forEach((link) => {
     });
 });
 
-if (title === "Interface | Soluções Inteligentes" || title === "Interface | Login") {
+if (title === "Interface | Soluções Sustentáveis" || title === "Interface | Login") {
     header.style.background = "transparent";
     menuAnchor[0].style.borderBottom = "3px solid #64B42D";
 } else {
@@ -32,12 +32,14 @@ if (title === "Interface | Soluções Inteligentes" || title === "Interface | Lo
 if (title === "Interface | Sobre nós") {
     menuAnchor[1].style.borderBottom = "3px solid #64B42D";
 }
-if (title === "Interface | Simulação") {
+if (title === "Interface | Portfólio") {
     menuAnchor[2].style.borderBottom = "3px solid #64B42D";
 }
-if (title === "Interface | Portfólio") {
+
+if (title === "Interface | Simulação") {
     menuAnchor[3].style.borderBottom = "3px solid #64B42D";
 }
+
 
 window.addEventListener("scroll", () => {
     if (window.pageYOffset > 72) {
@@ -50,7 +52,7 @@ window.addEventListener("scroll", () => {
     if (window.pageYOffset === 0) {
         header.style.background = "transparent";
 
-        if (title !== "Interface | Soluções Inteligentes") {
+        if (title !== "Interface | Soluções Sustentáveis") {
             menuAnchor.forEach((e) => (e.style.color = "#1d99a7"));
             menuMobileSpan.forEach((e) => (e.style.background = "#1d99a7"));
             

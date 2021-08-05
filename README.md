@@ -1,10 +1,13 @@
-# Interface Website | Soluções Inteligentes
+# Interface Website | Soluções Sustentáveis
 
 ## Website feito para empresa sustentável - placas solares
 - Home page 
 - Sobre nós
 - Simulação de orçamento
 - Portfólio
+
+- Login
+- Admin
 
 ## Tecnologias Utilizadas
 
@@ -14,7 +17,7 @@
 - JS
 
 ### Back-end
-- NodeJS
+- NodeJS (express)
 
 ### Data-base
 - MongoDB

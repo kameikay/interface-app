@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const bcryptjs = require("bcryptjs");
 
 const LoginSchema = new mongoose.Schema({
     login: { type: String, required: true },
@@ -22,28 +21,15 @@ class Login {
         };
 
         if (this.errors.length > 0) return;
+
         this.user = await LoginModel.findOne({ login: this.body.login });
 
-        if (!this.user ) {
-            // || this.body.password !== this.user.password
+        if (!this.user || this.body.password !== this.user.password) {
             this.errors.push("Dados inválidos");
             this.user = null;
             return;
         }
     }
-
-    // valida() {
-    //     this.cleanUp()
-    // }
-
-    // cleanUp() {
-    //     for (let key in this.body) {
-    //         if (typeof this.body[key] !== 'string') {
-    //             this.body[key] = ''
-    //         }
-    //     }
-
-    // }
 }
 
 module.exports = Login;
