@@ -1,9 +1,12 @@
 const PortfolioRepository = require("../repositories/PortfolioRepository");
+const Portfolio = require('../models/AdminModel')
 
 // Render Pages
-exports.portfolioPage = (request, response) => {
+exports.portfolioPage = async (request, response) => {
+    const portfolio = await Portfolio.find({})
     response.render("portfolio", {
         title: "Interface | Portfólio",
+        portfolio: portfolio
     });
 };
 

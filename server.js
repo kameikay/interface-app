@@ -11,7 +11,7 @@ mongoose
         useNewUrlParser: true,
     })
     .then(() => {
-        server.emit("Database OK 👌");
+        server.emit("Database OK");
     })
     .catch((e) => console.log(e));
 
@@ -37,6 +37,11 @@ const sessionOptions = session({
     saveUninitialized: true,
 });
 
+
+const { adminBroOptions, router } = require("./src/controllers/adminController");
+
+server.use(adminBroOptions.options.rootPath, router);
+
 server.use(sessionOptions);
 server.use(flash());
 
@@ -54,7 +59,7 @@ server.use(checkCsrfError);
 server.use(csrfMiddleware);
 server.use(routes);
 
-server.on("Database OK 👌", () => {
+server.on("Database OK", () => {
     server.listen(PORT, () => {
         console.log(`🔥 Server running at http://localhost:${PORT}`);
     });
