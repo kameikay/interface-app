@@ -7,15 +7,13 @@ const Login = require("../models/LoginModel");
 
 exports.loginForm = (request, response) => {
     if (request.session.user) {
-        return response.render("admin", {
-            title: "Interface | Admin",
-        });
+        return response.redirect("/user/admin");
     }
+
     return response.render("login", {
         title: "Interface | Login",
     });
 };
-
 
 exports.login = async (request, response) => {
     try {
@@ -25,7 +23,7 @@ exports.login = async (request, response) => {
         if (login.errors.length > 0) {
             request.flash("errors", login.errors);
             request.session.save(function () {
-                return response.redirect("/login");
+                return response.redirect("/user");
             });
             return;
         }
@@ -33,9 +31,7 @@ exports.login = async (request, response) => {
         request.session.user = login.user;
 
         request.session.save(function () {
-            return response.render("admin", {
-                title: "Interface | Admin",
-            });
+            return response.redirect("/user/admin");
         });
     } catch (e) {
         console.log(e);
@@ -44,6 +40,6 @@ exports.login = async (request, response) => {
 };
 
 exports.logout = (request, response) => {
-    request.session.destroy()
-    response.redirect('/login')
-}
+    request.session.destroy();
+    response.redirect("/user");
+};

@@ -1,0 +1,125 @@
+.admin-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(235, 231, 231);
+
+    .aside {
+        width: 20%;
+        height: 100%;
+        background-color: $normal-white;
+        box-shadow: 2px 0 10px 2px rgba(0, 0, 0, 0.15);
+        .title {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            > img {
+                width: 48px;
+            }
+
+            > h2 {
+                padding: 0 0.5rem;
+                font-size: $h4;
+            }
+        }
+
+        > ul {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            > li {
+                > a {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    color: $dark-grey;
+                }
+            }
+        }
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100%;
+
+        &__container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            table {
+                margin: 4rem;
+                width: 100%;
+                height: 80%;
+                background-color: $normal-white;
+                box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
+                border-radius: 8px;
+                border-bottom: 1px solid $dark-white;
+                border-spacing: 0;
+
+                thead {
+                    th {
+                        padding: 0.5rem 0;
+                        text-align: center;
+                        border-bottom: 1px solid $dark-white;
+                        font-size: $h5;
+                    }
+                }
+                tbody {
+                    tr:nth-of-type(odd) {
+                        background-color: #f6f6f6;
+
+                        &:hover {
+                            background-color: #ecf7ff;
+                        }
+                    }
+
+                    tr {
+                        padding: 0 2rem;
+
+                        td {
+                            text-align: center;
+
+                            button {
+                                padding: 0.8rem;
+                                border-radius: 1rem;
+                                border: none;
+                                font-size: $h6;
+                                color: $normal-white;
+                                cursor: pointer;
+                            }
+                            .edit {
+                                background-color: $normal-green;
+
+                                &:hover {
+                                    background-color: $dark-green;
+                                }
+                            }
+
+                            .delete {
+                                background-color: #d61034;
+
+                                &:hover {
+                                    background-color: #af1834;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -18,7 +18,8 @@ mongoose
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
-const routes = require("./routes");
+const routes = require("./routes/routes");
+const adminRoutes = require("./routes/admin.routes");
 const csrf = require("csurf");
 const {
     checkCsrfError,
@@ -37,11 +38,6 @@ const sessionOptions = session({
     saveUninitialized: true,
 });
 
-
-const { adminBroOptions, router } = require("./src/controllers/adminController");
-
-server.use(adminBroOptions.options.rootPath, router);
-
 server.use(sessionOptions);
 server.use(flash());
 
@@ -57,7 +53,12 @@ server.use(csrf());
 server.use(middlewareError);
 server.use(checkCsrfError);
 server.use(csrfMiddleware);
-server.use(routes);
+
+
+server.use("/user", adminRoutes);
+
+server.use("/", routes);
+
 
 server.on("Database OK", () => {
     server.listen(PORT, () => {

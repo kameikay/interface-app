@@ -9,6 +9,12 @@
 // Header
 @import "header";
 
+
+@import "admin";
+@import "login";
+@import "not-found";
+
+
 // HOME
 @import "hero";
 @import "quem-somos";
@@ -34,6 +40,3 @@
 @import "footer";
 
 // LOGIN
-@import "login";
-
-@import "not-found";

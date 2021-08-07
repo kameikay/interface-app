@@ -1,6 +1,5 @@
 header {
     width: 100%;
-    // background: rgba(28, 49, 55, 0.25);
     background: transparent;
     display: flex;
     align-items: center;
@@ -52,7 +51,6 @@ header {
                 color: $normal-white;
                 letter-spacing: 1px;
                 padding: 16px 20px;
-                font-size: bold;
 
                 &:hover {
                     color: $dark-navy;
