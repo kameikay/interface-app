@@ -9,6 +9,7 @@ mongoose
     .connect(process.env.CONNECTION_STRING, {
         useUnifiedTopology: true,
         useNewUrlParser: true,
+        useFindAndModify: false,
     })
     .then(() => {
         server.emit("Database OK");
@@ -46,7 +47,7 @@ server.use(express.json());
 
 server.use(express.static(path.resolve(__dirname, "src", "public")));
 
-server.set("views", path.resolve(__dirname, "src", "views"));
+server.set("views", path.resolve(__dirname, "src", "views", "pages"));
 server.set("view engine", "ejs");
 
 server.use(csrf());

@@ -1,0 +1,68 @@
+<%- include('../includes/head') %>
+
+    <body>
+        <%- include('../includes/preloader') %>
+
+        <div class="admin-container">
+
+        <%- include('../includes/asideAdmin') %>
+
+    
+            <main class="main">
+                <div class="main__container">
+                    <%- include('../includes/messages') %> 
+
+                    <table class="portfolio-table">
+                        <thead>
+                            <tr class="table-title">
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Endereço</th>
+                                <th>Descrição</th>
+                                <th>Vídeo</th>
+                                <th>Fotos</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    
+                        <tbody>
+                            <% if (portfolio.length === 0) { %>
+                                    <tr class="table-items">
+                                        <td colspan="7" align="center">
+                                            <h1>NENHUM PORTFÓLIO CADASTRADO</h1>
+                                        </td>
+                                    </tr>
+                            <% } else { %>
+                                <% portfolio.forEach(element => { %> 
+                                    <tr class="table-items">
+                                        <td class="table-name"><a href="/user/admin/edit/<%= element._id %> "><%= element.name %> </a></td>
+                                        <td class="table-category"><a href=""><%= element.category %> </a></td>
+                                        <td class="table-address"><%= element.address %> </td>
+                                        <td class="table-description"><%= element.description %> </td>
+                                        <td class="table-videos">
+                                            <% if (element.videoURL.length > 0) { %>
+                                                <a href="<%= element.videoURL %>">Vídeo</a>
+                                            <% } else { %>
+                                                -
+                                            <%} %> 
+                                        </td>
+                                        <td class="table-photos"><%= element.photos %> </td>
+                                        <td class="table-actions">
+                                            <button class="edit"><a href="/user/admin/edit/<%= element._id %>">Editar</a></button>
+                                            <button class="delete"><a href="/user/admin/delete/<%= element._id %>">Deletar</a></button>
+                                        </td>
+                                    </tr>
+                                <% }) %> 
+                            <% } %>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </main>
+    
+        </div>
+
+        <script src="../scripts/preloader.js" type="text/javascript"></script>
+
+    </body>
+</html>

@@ -1,9 +1,19 @@
 const Portfolio = require("../models/PortfolioModel");
 
 exports.adminPage = async (request, response) => {
-    response.render("admin", {
-        title: "Interface | Admin",
-    });
+    try {
+        const portfolio = await Portfolio.showAll();
+
+        response.render("admin", {
+            title: "Interface | Admin",
+            portfolio,
+        });
+    } catch (error) {
+        console.log(error);
+        response.render("404", {
+            title: "Interface | Página não encontrada",
+        });
+    }
 };
 
 exports.createPost = async (request, response) => {
@@ -31,7 +41,89 @@ exports.register = async (request, response) => {
     } catch (error) {
         console.log(error);
         return response.render("404", {
-            title: 'Interface | Página não encontrada'
+            title: "Interface | Página não encontrada",
+        });
+    }
+};
+
+exports.editPage = async (request, response) => {
+    try {
+        if (!request.params.id) {
+            return response.render("404", {
+                title: "Interface | Página não encontrada",
+            });
+        }
+
+        const portfolio = await Portfolio.findById(request.params.id);
+
+        if (!portfolio)
+            return response.render("404", {
+                title: "Interface | Página não encontrada",
+            });
+
+        response.render("adminEdit", {
+            title: "Interface | Admin - Editar",
+            portfolio,
+        });
+    } catch (error) {
+        console.log(error);
+        return response.sender("404", {
+            title: "Interface | Página não encontrada",
+        });
+    }
+};
+
+exports.editPost = async (request, response) => {
+    try {
+        if (!request.params.id) {
+            return response.render("404", {
+                title: "Interface | Página não encontrada",
+            });
+        }
+
+        const portfolio = new Portfolio(request.body);
+        await portfolio.edit(request.params.id);
+
+        if (portfolio.errors.length > 0) {
+            request.flash("errors", portfolio.errors);
+            request.session.save(function () {
+                return response.redirect("/user/create-post");
+            });
+            return;
+        }
+        request.flash("success", "Portfólio editado com sucesso");
+        request.session.save(function () {
+            return response.redirect("/user/create-post");
+        });
+    } catch (error) {
+        console.log(error);
+        return response.render("404", {
+            title: "Interface | Página não encontrada",
+        });
+    }
+};
+
+exports.deletePost = async (request, response) => {
+    try {
+        if (!request.params.id) {
+            return response.render("404", {
+                title: "Interface | Página não encontrada",
+            });
+        }
+
+        const portfolio = await Portfolio.delete(request.params.id);
+        if (!portfolio) return response.render('404', {title: 'Interface | Página não encontrada'})
+
+        request.flash("success", "Portfólio deletado com sucesso");
+
+        request.session.save(function () {
+            return response.redirect("/user/admin");
+        });
+        return
+    } catch (error) {
+        console.log(error);
+        return response.render("404", {
+            title: "Interface | Página não encontrada",
         });
     }
 };

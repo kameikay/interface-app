@@ -1,9 +1,9 @@
-<%- include('includes/head') %>
+<%- include('../includes/head') %>
 
     <body>
-        <%- include('includes/preloader') %>
+        <%- include('../includes/preloader') %>
 
-        <%- include('includes/header') %>
+        <%- include('../includes/header') %>
 
 
         <main class="login-section">
@@ -11,7 +11,7 @@
                 <img src="./images/brand Interface-05.png" alt="INTERFACE LOGO">
                 <form action="/user/" id="login" method="POST">
                     <input type="hidden" name="_csrf" value="<%=csrfToken %>">
-                    <%- include('includes/error') %> 
+                    <%- include('../includes/messages') %> 
                     <label for="login">Usuário:</label>
                     <input type="text" name="login" required>
                     <label for="password">Senha:</label>

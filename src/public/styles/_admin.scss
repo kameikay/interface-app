@@ -51,11 +51,9 @@
                         color: $normal-green;
                     }
                 }
-
             }
         }
 
-        
         .logout {
             margin: 0 1rem;
             display: flex;
@@ -89,9 +87,8 @@
             align-items: center;
             justify-content: center;
 
-
             table {
-                width: 80%;
+                width: 90%;
                 padding: 2rem;
                 height: 80%;
                 background-color: $normal-white;
@@ -99,6 +96,7 @@
                 border-radius: 8px;
                 border-bottom: 1px solid $dark-white;
                 border-spacing: 0;
+                table-layout: fixed;
 
                 thead {
                     th {
@@ -106,11 +104,13 @@
                         text-align: center;
                         border-bottom: 1px solid $dark-white;
                         font-size: $h5;
+                        color: $dark-navy;
                     }
                 }
+
                 tbody {
                     tr:nth-of-type(odd) {
-                        background-color: #f6f6f6;
+                        background-color: #cdedf1;
 
                         &:hover {
                             background-color: #ecf7ff;
@@ -120,8 +120,17 @@
                     tr {
                         padding: 0 2rem;
 
+                        .table-description {
+                            vertical-align: middle;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+
                         td {
                             text-align: center;
+                            color: $dark-navy;
+
 
                             button {
                                 padding: 0.8rem;
@@ -131,8 +140,17 @@
                                 color: $normal-white;
                                 cursor: pointer;
                             }
+
+                            > a {
+                                color: $dark-navy;
+                            }
+
                             .edit {
                                 background-color: $normal-green;
+
+                                > a {
+                                    color: $normal-white;
+                                }
 
                                 &:hover {
                                     background-color: $dark-green;
@@ -142,6 +160,9 @@
                             .delete {
                                 background-color: #d61034;
 
+                                > a {
+                                    color: $normal-white;
+                                }
                                 &:hover {
                                     background-color: #af1834;
                                 }
@@ -154,7 +175,7 @@
             .new-post {
                 padding: 1rem 0;
                 width: 50vw;
-                height: 70vh;
+                height: 80vh;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -165,6 +186,7 @@
                 .title-new-post {
                     font-size: $h2;
                     color: $dark-navy;
+                    margin: 1.5rem 0;
                 }
 
                 form#new-post {
@@ -173,6 +195,7 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    justify-content: space-around;
                     padding: 2rem;
 
                     label {
@@ -222,7 +245,7 @@
                         }
 
                         .name {
-                            margin-right: 1rem;            
+                            margin-right: 1rem;
 
                             > input {
                                 border: 1px solid $dark-navy;
@@ -233,7 +256,8 @@
                             }
                         }
                     }
-                    .video, .address {
+                    .video,
+                    .address {
                         width: 100%;
                         > input {
                             width: 100%;
@@ -242,7 +266,6 @@
                             font-size: $h6;
                             padding: 0 0.5rem;
                             border: 1px solid $dark-navy;
-
 
                             &:focus {
                                 outline: none;
@@ -281,4 +304,24 @@
             }
         }
     }
+}
+
+.error {
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 40%;
+    text-align: center;
+    background-color: rgba(155, 68, 84, 0.6);
+    border: 2px solid #af1834;
+    color: $normal-white;
+}
+
+.success {
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 40%;
+    text-align: center;
+    background-color: rgba(121, 187, 121, 0.6);
+    border: 2px solid $normal-green;
+    color: $normal-white;
 }

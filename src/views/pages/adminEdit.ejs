@@ -1,26 +1,50 @@
-<%- include('includes/head') %>
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#1d99a7" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        />
+        <link rel="stylesheet" href="../../../styles/style.css" />
+        <link rel="shortcut icon" href="../../../images/favicon-32x32.png" />
+
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <title><%- title %></title>
+    </head>
+</html>
 
     <body>
-        <%- include('includes/preloader') %>
+        <%- include('../includes/preloader') %>
 
         <div class="admin-container">
 
-        <%- include('includes/asideAdmin') %>
+        <%- include('../includes/asideAdmin') %>
 
             <main class="main">
                 <div class="main__container">
                     <div class="new-post">
                         <h2 class="title-new-post">CRIAR NOVO PORTFÓLIO</h2>
 
-                        <%- include('includes/error') %> 
+                        <%- include('../includes/messages') %> 
 
-                        <form action="/user/register" method="POST" id="new-post">
+                        <form action="/user/admin/edit/<%= portfolio._id %> " method="POST" id="new-post">
                             <input type="hidden" name="_csrf" value="<%=csrfToken %>">
 
                             <div class="name-category">
                                 <div class="name">
                                     <label for="name">Nome:</label>
-                                    <input type="text" id="name" name="name" required>
+                                    <input type="text" id="name" name="name" value="<%= portfolio.name %>" required>
                                 </div>
                     
                                 <div class="category">
@@ -34,17 +58,17 @@
 
                             <div class="address">
                                 <label for="address">Endereço:</label>
-                                <input name="address" id="address" required></input>
+                                <input name="address" id="address" value="<%= portfolio.address %>" required></input>
                             </div>
 
                             <div class="description">
                                 <label for="description">Descrição:</label>
-                                <textarea name="description" id="description" required></textarea>
+                                <textarea name="description" id="description" value="<%= portfolio.description %>"  required></textarea>
                             </div>
 
                             <div class="video">
                                 <label for="videoURL">URL do vídeo:</label>
-                                <input type="text" id="videoURL" name="videURL">
+                                <input type="text" id="videoURL" value="<%= portfolio.videoURL %>" name="videoURL">
                             </div>
                     
                             <div class="images">
@@ -61,6 +85,6 @@
     
         </div>
         
-        <script src="../scripts/preloader.js" type="text/javascript"></script>
+        <script src="../../../scripts/preloader.js" type="text/javascript"></script>
     </body>
 </html>

@@ -1,13 +1,16 @@
 <aside class="aside">
     <div class="title">
-        <img src="../images/logo-semescrita.png" alt="INTERFACE LOGO">
+        <% if (title === 'Interface | Admin - Editar') { %>
+            <img src="../../../images/logo-semescrita.png" alt="INTERFACE LOGO" />
+        <% } else { %>
+            <img src="../images/logo-semescrita.png" alt="INTERFACE LOGO" />
+        <% } %>
         <!-- <h1>Interface</h1> -->
     </div>
     <ul>
         <li><a href="/user/admin">Administrador</a></li>
         <li><a href="/user/create-post">Criar postagem</a></li>
     </ul>
-    
-    <a href="/user/logout" class="logout">Deslogar</a>
 
+    <a href="/user/logout" class="logout">Deslogar</a>
 </aside>
