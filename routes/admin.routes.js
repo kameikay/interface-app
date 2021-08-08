@@ -14,6 +14,8 @@ adminRoutes.post("/", loginController.login);
 adminRoutes.get("/logout", loginController.logout);
 
 adminRoutes.get("/admin", loginRequired, adminController.adminPage);
+adminRoutes.get("/create-post", loginRequired, adminController.createPost);
+adminRoutes.post("/register", loginRequired, adminController.register);
 
 // adminRoutes.get("/api", api.index);
 // adminRoutes.get("/api/:id", api.show);
@@ -21,6 +23,6 @@ adminRoutes.get("/admin", loginRequired, adminController.adminPage);
 // adminRoutes.put("/api/:id", api.update);
 // adminRoutes.delete("/api/:id", api.delete);
 
-adminRoutes.get("*", errorController.errorPage);
+adminRoutes.get("/*", errorController.errorPage);
 
 module.exports = adminRoutes;

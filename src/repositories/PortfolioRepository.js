@@ -1,11 +1,11 @@
 const { v4 } = require("uuid");
 
 
-
 let portfolio = [
     {
         id: v4(),
         name: "Casa Residencial",
+        category: "placas",
         address: "R. Conrado Schiffer, 20",
         description: "Instalação de 12 (doze) placas solares",
         // photo,
@@ -14,6 +14,7 @@ let portfolio = [
     {
         id: v4(),
         name: "Casa Comercial",
+        category: "placas",
         address: "R. Aldo Vergani, 123",
         description: "Instalação de 4 (quatro) placas solares",
         // photo,
@@ -22,6 +23,7 @@ let portfolio = [
     {
         id: v4(),
         name: "Indústria de Farinha",
+        category: "chuva",
         address: "Rodovia BR 233, km 12",
         description: "Instalação de 123 (cento e vinte e três) placas solares",
         // photo,
@@ -47,11 +49,12 @@ exports.delete = (id) => {
     });
 };
 
-exports.create = ({ name, address, description }) => {
+exports.create = ({ name, category, address, description }) => {
     return new Promise((resolve) => {
         const newCaso = {
             id: v4(),
             name,
+            category,
             address,
             description,
         };

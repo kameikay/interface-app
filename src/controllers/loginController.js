@@ -1,10 +1,5 @@
 const Login = require("../models/LoginModel");
 
-// LoginModel.create({
-//     login: 'interface-admin',
-//     password: '@interface_admin'
-// })
-
 exports.loginForm = (request, response) => {
     if (request.session.user) {
         return response.redirect("/user/admin");

@@ -13,7 +13,7 @@ class Login {
         this.errors = [];
         this.user = null;
     }
-
+    
     async login() {
         this.body = {
             login: this.body.login,

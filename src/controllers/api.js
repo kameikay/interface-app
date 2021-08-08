@@ -2,8 +2,8 @@ const PortfolioRepository = require("../repositories/PortfolioRepository");
 
 exports.index = async (request, response) => {
     const portfolio = await PortfolioRepository.findAll();
-    // response.json(portfolio)
-    return portfolio
+    response.json(portfolio)
+    // return portfolio
 };
 
 exports.show = async (request, response) => {
@@ -27,6 +27,7 @@ exports.store = async (request, response) => {
 
     const caso = await PortfolioRepository.create({
         name,
+        category,
         address,
         description,
     });
