@@ -17,9 +17,11 @@ exports.portfolioPage = async (request, response) => {
     }
 };
 
-exports.showCases = async (resquest, response) => {
+exports.showCases = async (request, response) => {
+    const portfolioCase = await Portfolio.findById(request.params.id)
     response.render('case', {
-        title: 'Interface | Portfolio - Serviços'
+        title: 'Interface | Portfólio - Serviço',
+        portfolioCase
     })
 }
 

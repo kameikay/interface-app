@@ -18,13 +18,13 @@
 
                     <% portfolio.map(el => { %> 
                         <div class="portfolio-page__container__cases__card">
-                            <a href="/case/<%= el._id %>">
-                                <img src="./images/portfolio-casa1.jpg" alt="">
+                            <a href="/portfolio/<%= el._id %>">
+                                <img src="<%= el.images[0].url %> " alt="FOTO DE SERVIÇO REALIZADO">
                             </a>
 
                             <div class="portfolio-page__container__cases__card__description">
                                 <p><%= el.name %> </p> 
-                                <a href="/case/<%= el._id %> "><img src="./images/mais.png" alt=""></a>
+                                <a href="/portfolio/<%= el._id %> "><img src="./images/mais.png" alt="BOTÃO PARA VER MAIS"></a>
                             </div>
                         </div>
                     <% }) %> 

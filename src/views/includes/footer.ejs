@@ -2,7 +2,12 @@
     <div class="footer__container">
         <div class="footer__container__logo">
             <div class="footer__container__logo__inside">
-                <img src="./images/logo-nobg-white.png" alt="Logo Interface" />
+                <img 
+                    <% if (title === 'Interface | Portfólio - Serviço') { %>
+                        src="../images/logo-nobg-white.png" 
+                    <% } %> 
+                src="./images/logo-nobg-white.png" 
+                alt="Logo Interface" />
             </div>
         </div>
 
@@ -30,6 +35,9 @@
                 <div class="rede-social__container">
                     <div class="rede-social">
                         <img
+                            <% if (title === 'Interface | Portfólio - Serviço') { %>
+                                src="../images/facebook.png"  
+                            <% } %> 
                             src="./images/facebook.png"
                             alt="Facebook"
                             class="footer-img"
@@ -38,6 +46,9 @@
                     </div>
                     <div class="rede-social">
                         <img
+                            <% if (title === 'Interface | Portfólio - Serviço') { %>
+                                src="../images/instagram.png"
+                            <% } %> 
                             src="./images/instagram.png"
                             alt="Instagram"
                             class="footer-img"
@@ -53,6 +64,9 @@
                 <h4>Contato</h4>
                 <div class="rede-social">
                     <img
+                        <% if (title === 'Interface | Portfólio - Serviço') { %>
+                            src="../images/whatsapp.png"
+                        <% } %> 
                         src="./images/whatsapp.png"
                         alt="WhatsApp"
                         class="footer-img"
@@ -61,6 +75,9 @@
                 </div>
                 <div class="rede-social">
                     <img
+                        <% if (title === 'Interface | Portfólio - Serviço') { %>
+                            src="../images/email.png"
+                        <% } %> 
                         src="./images/email.png"
                         alt="E-mail"
                         class="footer-img"

@@ -3,6 +3,9 @@
         <div class="logo">
             <a href="/"
                 ><img
+                    <% if (title === 'Interface | Portfólio - Serviço') { %>
+                        src="../images/logo-navbar.png"
+                    <% } %> 
                     src="./images/logo-navbar.png"
                     alt="Interface Logo"
                     class="logo-img"
@@ -22,10 +25,7 @@
             <li class="menu-item"><a href="/portfolio">Portfólio</a></li>
             <li class="menu-item"><a href="/simulacao">Simulador</a></li>
             <% } %> 
-            <!--<% //if (user) { %>
-            <li class="menu-item"><a href="/user/admin">Administrador</a></li>
-            <li class="menu-item"><a href="/user/logout">Deslogar</a></li>
-            <% //} %> -->
+
         </ul>
     </nav>
 </header>

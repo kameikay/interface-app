@@ -24,7 +24,6 @@ exports.createPost = async (request, response) => {
 
 exports.register = async (req, res) => {
     try {
-        console.log(req.body , req.files)
         const portfolio = new Portfolio(req.body , req.files);
         await portfolio.register();
 
@@ -35,7 +34,7 @@ exports.register = async (req, res) => {
             });
             return;
         }
-
+        
         req.flash("success", "Portfólio registrado com sucesso");
         req.session.save(function () {
             return res.redirect("/user/create-post");
@@ -115,7 +114,7 @@ exports.deletePost = async (request, response) => {
         }
 
         const portfolio = await Portfolio.delete(request.params.id);
-        
+
         if (!portfolio)
             return response.render("404", {
                 title: "Interface | Página não encontrada",

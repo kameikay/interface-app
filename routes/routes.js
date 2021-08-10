@@ -16,7 +16,8 @@ route.get("/sobre", aboutController.aboutPage);
 route.get("/simulacao", simuladorController.simuladorPage);
 
 route.get("/portfolio", portfolioController.portfolioPage);
-route.get("/case", portfolioController.showCases);
+route.get("/portfolio/:id", portfolioController.showCases);
+
 
 
 route.get("*", errorController.errorPage);
