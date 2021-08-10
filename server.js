@@ -1,9 +1,10 @@
 require("dotenv").config();
 const express = require("express");
 const server = express();
-const PORT = 3000;
+const PORT = 8080;
 const path = require("path");
 const mongoose = require("mongoose");
+const morgan = require(`morgan`);
 
 mongoose
     .connect(process.env.CONNECTION_STRING, {
@@ -42,24 +43,30 @@ const sessionOptions = session({
 server.use(sessionOptions);
 server.use(flash());
 
-server.use(express.urlencoded({ extended: true }));
-server.use(express.json());
+server.use(morgan("dev"));
 
 server.use(express.static(path.resolve(__dirname, "src", "public")));
 
 server.set("views", path.resolve(__dirname, "src", "views", "pages"));
 server.set("view engine", "ejs");
 
-server.use(csrf());
 server.use(middlewareError);
-server.use(checkCsrfError);
-server.use(csrfMiddleware);
-
 
 server.use("/user", adminRoutes);
 
-server.use("/", routes);
+server.use(csrf());
+server.use(checkCsrfError);
+server.use(csrfMiddleware);
 
+server.use(
+    express.urlencoded({
+        extended: true,
+    })
+);
+
+server.use(express.json());
+
+server.use("/", routes);
 
 server.on("Database OK", () => {
     server.listen(PORT, () => {

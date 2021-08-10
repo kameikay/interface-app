@@ -14,8 +14,7 @@
 
                         <%- include('../includes/messages') %> 
 
-                        <form action="/user/register" method="POST" id="new-post">
-                            <input type="hidden" name="_csrf" value="<%=csrfToken %>">
+                        <form action="/user/register" method="POST" id="new-post" name="new-post" enctype="multipart/form-data">
 
                             <div class="name-category">
                                 <div class="name">
@@ -34,28 +33,29 @@
 
                             <div class="address">
                                 <label for="address">Endereço:</label>
-                                <input name="address" id="address" required></input>
+                                <input name="address" id="address" type="text" required></input>
                             </div>
 
                             <div class="description">
                                 <label for="description">Descrição:</label>
-                                <textarea name="description" id="description" required></textarea>
+                                <textarea type="text" name="description" id="description" required></textarea>
                             </div>
 
                             <div class="video">
                                 <label for="videoURL">URL do vídeo:</label>
                                 <input type="text" id="videoURL" name="videoURL">
                             </div>
-                    
-                            <div class="images">
+                            
+                            <div class="imagesClass">
                                 <label for="images">Fotos:</label>
-                                <input type="file" name="images" id="images">
+                                <input type="file" name="images" multiple >
                             </div>
                     
                             <button type="submit" form="new-post">Salvar</button>
-                        </form>
-                    </div>
 
+                        </form>
+
+                    </div>
                 </div>
             </main>
     

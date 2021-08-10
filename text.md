@@ -5,8 +5,8 @@
 
 # página sobre nós [X]
 
-# 3 página portfolio [ ]
-    -> CMS
+# 3 página portfolio [X]
+    -> CMS [X]
 
 # aba simulador [X]
 

@@ -547,11 +547,11 @@ header .navbar .menu-items a:hover {
   outline: none;
   border: 2px solid #64B42D;
 }
-.admin-container .main__container .new-post form#new-post .images {
+.admin-container .main__container .new-post form#new-post .imagesClass {
   margin: 1rem 0;
   width: 100%;
 }
-.admin-container .main__container .new-post form#new-post .images > input {
+.admin-container .main__container .new-post form#new-post .imagesClass > input {
   width: 100%;
 }
 .admin-container .main__container .new-post form#new-post > button {

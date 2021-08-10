@@ -22,25 +22,28 @@ exports.createPost = async (request, response) => {
     });
 };
 
-exports.register = async (request, response) => {
+exports.register = async (req, res) => {
     try {
-        const portfolio = new Portfolio(request.body);
+        console.log(req.body , req.files)
+        const portfolio = new Portfolio(req.body , req.files);
         await portfolio.register();
 
         if (portfolio.errors.length > 0) {
-            request.flash("errors", portfolio.errors);
-            request.session.save(function () {
-                return response.redirect("/user/create-post");
+            req.flash("errors", portfolio.errors);
+            req.session.save(function () {
+                return res.redirect("/user/create-post");
             });
             return;
         }
-        request.flash("success", "Portfólio registrado com sucesso");
-        request.session.save(function () {
-            return response.redirect("/user/create-post");
+
+        req.flash("success", "Portfólio registrado com sucesso");
+        req.session.save(function () {
+            return res.redirect("/user/create-post");
         });
+
     } catch (error) {
         console.log(error);
-        return response.render("404", {
+        return res.render("404", {
             title: "Interface | Página não encontrada",
         });
     }
@@ -112,14 +115,18 @@ exports.deletePost = async (request, response) => {
         }
 
         const portfolio = await Portfolio.delete(request.params.id);
-        if (!portfolio) return response.render('404', {title: 'Interface | Página não encontrada'})
+        
+        if (!portfolio)
+            return response.render("404", {
+                title: "Interface | Página não encontrada",
+            });
 
         request.flash("success", "Portfólio deletado com sucesso");
 
         request.session.save(function () {
             return response.redirect("/user/admin");
         });
-        return
+        return;
     } catch (error) {
         console.log(error);
         return response.render("404", {
