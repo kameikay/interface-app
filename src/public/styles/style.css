@@ -307,12 +307,13 @@ header .navbar .menu-items a:hover {
 .admin-container {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: #FDFDFD;
+  position: relative;
 }
 .admin-container .aside {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 15vw;
   height: 100%;
   background-color: #7ECED7;
@@ -370,24 +371,21 @@ header .navbar .menu-items a:hover {
 }
 .admin-container .main {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  padding: 4rem 0 4rem calc(15vw);
 }
 .admin-container .main__container {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .admin-container .main__container table {
   width: 90%;
   padding: 2rem;
-  height: 80%;
+  height: 100%;
   background-color: #FDFDFD;
   box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
@@ -410,6 +408,7 @@ header .navbar .menu-items a:hover {
 }
 .admin-container .main__container table tbody tr {
   padding: 0 2rem;
+  margin: 1rem 0;
 }
 .admin-container .main__container table tbody tr .table-description {
   vertical-align: middle;
@@ -421,19 +420,17 @@ header .navbar .menu-items a:hover {
   text-align: center;
   color: #115157;
 }
-.admin-container .main__container table tbody tr td button {
+.admin-container .main__container table tbody tr td > a {
+  color: #115157;
+}
+.admin-container .main__container table tbody tr td .edit {
+  background-color: #64B42D;
   padding: 0.8rem;
   border-radius: 1rem;
   border: none;
   font-size: 1rem;
   color: #FDFDFD;
   cursor: pointer;
-}
-.admin-container .main__container table tbody tr td > a {
-  color: #115157;
-}
-.admin-container .main__container table tbody tr td .edit {
-  background-color: #64B42D;
 }
 .admin-container .main__container table tbody tr td .edit > a {
   color: #FDFDFD;
@@ -443,6 +440,12 @@ header .navbar .menu-items a:hover {
 }
 .admin-container .main__container table tbody tr td .delete {
   background-color: #d61034;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1rem;
+  color: #FDFDFD;
+  cursor: pointer;
 }
 .admin-container .main__container table tbody tr td .delete > a {
   color: #FDFDFD;
@@ -451,9 +454,7 @@ header .navbar .menu-items a:hover {
   background-color: #af1834;
 }
 .admin-container .main__container .new-post {
-  padding: 1rem 0;
-  width: 50vw;
-  height: 80vh;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -554,6 +555,29 @@ header .navbar .menu-items a:hover {
 .admin-container .main__container .new-post form#new-post .imagesClass > input {
   width: 100%;
 }
+.admin-container .main__container .new-post form#new-post .imagesClass .images-posted {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.admin-container .main__container .new-post form#new-post .imagesClass .images-posted .image-posted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+}
+.admin-container .main__container .new-post form#new-post .imagesClass .images-posted .image-posted > img {
+  width: 10vw;
+  height: 20vh;
+  display: block;
+  margin: 0.5rem 0;
+}
+.admin-container .main__container .new-post form#new-post .imagesClass .images-posted .image-posted .delete-button {
+  background-color: #d61034;
+  color: #FDFDFD;
+}
 .admin-container .main__container .new-post form#new-post > button {
   margin: 2rem 0 1rem;
   width: 100%;
@@ -591,6 +615,57 @@ header .navbar .menu-items a:hover {
   color: #FDFDFD;
 }
 
+@media screen and (max-width: 1200px) {
+  .admin-container .aside {
+    width: 20vw;
+  }
+  .admin-container .aside .title > img {
+    width: 42px;
+  }
+  .admin-container .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0 4rem calc(20vw);
+  }
+  .admin-container .main__container table {
+    width: 90%;
+    padding: 1rem;
+    table-layout: auto;
+  }
+  .admin-container .main__container table thead th {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+  .admin-container .main__container table tbody tr {
+    padding: 0 2rem;
+  }
+  .admin-container .main__container table tbody tr td {
+    text-align: center;
+    color: #115157;
+  }
+  .admin-container .main__container table tbody tr td button {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    font-size: 1rem;
+    color: #FDFDFD;
+    cursor: pointer;
+  }
+  .admin-container .main__container table tbody tr td > a {
+    color: #115157;
+  }
+  .admin-container .main__container .new-post {
+    width: 80%;
+  }
+  .admin-container .main__container .new-post .title-new-post {
+    font-size: 1.75rem;
+  }
+  .admin-container .main__container .new-post form#new-post .imagesClass .images-posted .image-posted > img {
+    width: 15vw;
+    height: 100%;
+  }
+}
 .login-section {
   background: url("../images/login-bg.jpg") no-repeat center/cover;
   width: 100vw;
@@ -1979,6 +2054,76 @@ label {
 }
 .about-us__container__why-interface__container__text > p {
   margin: 2rem 0;
+}
+.about-us__container__faq {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 112px;
+}
+.about-us__container__faq__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about-us__container__faq__container__header {
+  width: 540px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 120px;
+}
+.about-us__container__faq__container__header .actived {
+  background-color: #115157;
+}
+.about-us__container__faq__container__header__head {
+  width: 100%;
+  background-color: #7ECED7;
+  color: #FDFDFD;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  margin: 16px 0;
+  transition: all ease-in-out 0.4s;
+}
+.about-us__container__faq__container__header__head__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about-us__container__faq__container__header__head__title > img {
+  margin-right: 1rem;
+}
+.about-us__container__faq__container__header__head__title > h4 {
+  font-size: 1.5rem;
+}
+.about-us__container__faq__container__header__head__arrow .active {
+  transform: rotate(-90deg);
+}
+.about-us__container__faq__container__header__head__arrow > img {
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+.about-us__container__faq__container__card {
+  width: 540px;
+  padding: 1rem;
+  box-shadow: -5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+  transition: all ease-in-out 0.3s;
+}
+.about-us__container__faq__container__card__inner {
+  width: 100%;
+  transition: all ease-in-out 0.3s;
+}
+.about-us__container__faq__container__card__inner > p {
+  font-size: 1rem;
+}
+.about-us__container__faq__container__card #card-result {
+  transition: all ease-in-out 0.3s;
 }
 .about-us__container__objectives {
   display: flex;

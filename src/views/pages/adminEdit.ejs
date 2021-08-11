@@ -39,7 +39,6 @@
                         <%- include('../includes/messages') %> 
 
                         <form action="/user/admin/edit/<%= portfolio._id %> " method="POST" id="new-post">
-                            <input type="hidden" name="_csrf" value="<%=csrfToken %>">
 
                             <div class="name-category">
                                 <div class="name">
@@ -71,9 +70,18 @@
                                 <input type="text" id="videoURL" value="<%= portfolio.videoURL %>" name="videoURL">
                             </div>
                     
-                            <div class="images">
+                            <div class="imagesClass">
                                 <label for="images">Fotos:</label>
                                 <input type="file" name="images" id="images">
+                                
+                                <div class="images-posted">
+                                    <% portfolio.images.forEach(image => { %> 
+                                            <div class="image-posted">
+                                                <img src="<%= image.url %> "/>
+                                                <a href="" class="delete-button">APAGAR</a>
+                                            </div>
+                                    <% }) %> 
+                                </div>
                             </div>
                     
                             <button type="submit" form="new-post">Salvar</button>

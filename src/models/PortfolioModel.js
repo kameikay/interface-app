@@ -125,6 +125,7 @@ class Portfolio {
 
         return portfolioCase;
     }
+
 }
 
 module.exports = Portfolio;

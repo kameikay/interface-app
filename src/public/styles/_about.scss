@@ -154,6 +154,91 @@
             }
         }
 
+        &__faq {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 112px;
+
+            &__container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &__header {
+                    width: 540px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-right: 120px;
+
+                    .actived {
+                        background-color: $dark-navy;
+                    }
+
+                    &__head {
+                        width: 100%;
+                        background-color: $light-navy;
+                        color: $normal-white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 8px 16px;
+                        margin: 16px 0;
+                        transition: all ease-in-out 0.4s;
+
+                        &__title {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            > img {
+                                margin-right: 1rem;
+                            }
+
+                            > h4 {
+                                font-size: $h4;
+                            }
+                        }
+
+                        &__arrow {
+                            .active {
+                                transform: rotate(-90deg);
+                            }
+                            > img {
+                                transition: all ease-in-out 0.3s;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                &__card {
+                    width: 540px;
+                    padding: 1rem;
+                    box-shadow: -5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+                    transition: all ease-in-out 0.3s;
+
+                    &__inner {
+                        width: 100%;
+                        transition: all ease-in-out 0.3s;
+
+                        > p {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    #card-result {
+                        transition: all ease-in-out 0.3s;
+                    }
+                }
+            }
+        }
+
         &__objectives {
             display: flex;
             flex-direction: column;
@@ -660,7 +745,6 @@
                 padding: 2rem;
 
                 > h2 {
-                    
                     &::after {
                         width: 50%;
                         margin: 1rem 25%;
@@ -674,7 +758,6 @@
 
                     &__img {
                         display: none;
-
                     }
                 }
             }
@@ -694,8 +777,7 @@
                         // > img {
                         //     width: 160px;
                         // }
-                            display: none;
-
+                        display: none;
                     }
 
                     > p {
@@ -705,37 +787,34 @@
 
                     .p-missao {
                         &::before {
-                            content: 'MISSÃO';
+                            content: "MISSÃO";
                             color: #000;
                             display: block;
                             font-size: $h3;
                             font-weight: 500;
                             margin: 1rem 0;
-
                         }
                     }
 
                     .p-visao {
                         &::before {
-                            content: 'VISÃO';
+                            content: "VISÃO";
                             color: #000;
                             display: block;
                             font-size: $h3;
                             font-weight: 500;
                             margin: 1rem 0;
-
                         }
                     }
 
                     .p-valores {
                         &::before {
-                            content: 'VALORES';
+                            content: "VALORES";
                             color: #000;
                             display: block;
                             font-size: $h3;
                             font-weight: 500;
                             margin: 1rem 0;
-
                         }
                     }
                     .missao {
@@ -753,11 +832,9 @@
                     font-size: $h4;
 
                     &::after {
-
                         width: 50%;
                         margin: 1rem 25%;
                     }
-                    
                 }
 
                 &__container {

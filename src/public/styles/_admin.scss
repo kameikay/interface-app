@@ -1,12 +1,13 @@
 .admin-container {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     background-color: $normal-white;
+    position: relative;
 
     .aside {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 15vw;
         height: 100%;
         background-color: $light-navy;
@@ -42,6 +43,7 @@
                 height: 2rem;
                 text-align: center;
                 margin: 2rem 0;
+
                 > a {
                     text-transform: uppercase;
                     font-weight: 600;
@@ -73,24 +75,22 @@
 
     .main {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        height: 100%;
+
+        padding: 4rem 0 4rem calc(15vw);
 
         &__container {
             width: 100%;
             height: 100%;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
 
             table {
                 width: 90%;
                 padding: 2rem;
-                height: 80%;
+                height: 100%;
                 background-color: $normal-white;
                 box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
                 border-radius: 8px;
@@ -119,6 +119,7 @@
 
                     tr {
                         padding: 0 2rem;
+                        margin: 1rem 0;
 
                         .table-description {
                             vertical-align: middle;
@@ -131,22 +132,19 @@
                             text-align: center;
                             color: $dark-navy;
 
+                            > a {
+                                color: $dark-navy;
 
-                            button {
+                            }
+
+                            .edit {
+                                background-color: $normal-green;
                                 padding: 0.8rem;
                                 border-radius: 1rem;
                                 border: none;
                                 font-size: $h6;
                                 color: $normal-white;
                                 cursor: pointer;
-                            }
-
-                            > a {
-                                color: $dark-navy;
-                            }
-
-                            .edit {
-                                background-color: $normal-green;
 
                                 > a {
                                     color: $normal-white;
@@ -154,11 +152,18 @@
 
                                 &:hover {
                                     background-color: $dark-green;
+                                    
                                 }
                             }
 
                             .delete {
                                 background-color: #d61034;
+                                padding: 0.8rem;
+                                border-radius: 1rem;
+                                border: none;
+                                font-size: $h6;
+                                color: $normal-white;
+                                cursor: pointer;
 
                                 > a {
                                     color: $normal-white;
@@ -173,9 +178,7 @@
             }
 
             .new-post {
-                padding: 1rem 0;
-                width: 50vw;
-                height: 80vh;
+                width: 60%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -281,6 +284,33 @@
                         > input {
                             width: 100%;
                         }
+
+                        .images-posted {
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+
+                            .image-posted {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0.5rem;
+
+                                > img {
+                                    width: 10vw;
+                                    height: 20vh;
+                                    display: block;
+                                    margin: 0.5rem 0;
+                                }
+
+                                .delete-button {
+                                    background-color: #d61034;
+                                    color: $normal-white;
+                                }
+                            }
+                        }
                     }
 
                     > button {
@@ -324,4 +354,86 @@
     background-color: rgba(121, 187, 121, 0.6);
     border: 2px solid $normal-green;
     color: $normal-white;
+}
+
+@media screen and (max-width: $bg) {
+    .admin-container {
+        .aside {
+            width: 20vw;
+
+            .title {
+                > img {
+                    width: 42px;
+                }
+            }
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 4rem 0 4rem calc(20vw);
+
+            &__container {
+                table {
+                    width: 90%;
+                    padding: 1rem;
+                    table-layout: auto;
+
+                    thead {
+                        th {
+                            padding: 0.5rem 0;
+                            font-size: $h6;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            padding: 0 2rem;
+
+                            td {
+                                text-align: center;
+                                color: $dark-navy;
+
+                                button {
+                                    padding: 0.5rem;
+                                    border-radius: 1rem;
+                                    border: none;
+                                    font-size: $h6;
+                                    color: $normal-white;
+                                    cursor: pointer;
+                                }
+
+                                > a {
+                                    color: $dark-navy;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .new-post {
+                    width: 80%;
+
+                    .title-new-post {
+                        font-size: $h3;
+                    }
+
+                    form#new-post {
+                        .imagesClass {
+                            .images-posted {
+                                .image-posted {
+                                    > img {
+                                        width: 15vw;
+                                        height: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -133,3 +133,32 @@ exports.deletePost = async (request, response) => {
         });
     }
 };
+
+exports.deleteImage = async (request, response) => {
+    try {
+        if (!request.params.id) {
+            return response.render("404", {
+                title: "Interface | Página não encontrada",
+            });
+        }
+
+        const portfolio = await Portfolio.delete(request.params.id);
+
+        if (!portfolio)
+            return response.render("404", {
+                title: "Interface | Página não encontrada",
+            });
+
+        request.flash("success", "Portfólio deletado com sucesso");
+
+        request.session.save(function () {
+            return response.redirect("/user/admin");
+        });
+        return;
+    } catch (error) {
+        console.log(error);
+        return response.render("404", {
+            title: "Interface | Página não encontrada",
+        });
+    }
+}
