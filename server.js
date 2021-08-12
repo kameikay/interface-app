@@ -30,7 +30,7 @@ const {
 } = require("./src/middlewares/middleware");
 
 const sessionOptions = session({
-    secret: "1jh23@dj!k973pgnwb1%",
+    secret: process.env.SESSION_SECRET,
     store: MongoStore.create({ mongoUrl: process.env.CONNECTION_STRING }),
     resave: false,
     cookie: {

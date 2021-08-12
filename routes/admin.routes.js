@@ -20,7 +20,7 @@ adminRoutes.get("/logout", loginController.logout);
 adminRoutes.get("/admin", loginRequired, adminController.adminPage);
 adminRoutes.get("/create-post", loginRequired, adminController.createPost);
 
-adminRoutes.post("/register", loginRequired, upload.array('images', 10),adminController.register);
+adminRoutes.post("/register", loginRequired, upload.array('images', 10), adminController.register);
 
 adminRoutes.get("/admin/edit/:id", loginRequired, adminController.editPage);
 adminRoutes.post("/admin/edit/:id", loginRequired, upload.array('images', 10), adminController.editPost);
