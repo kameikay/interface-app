@@ -83,7 +83,7 @@ exports.editPost = async (request, response) => {
             });
         }
 
-        const portfolio = new Portfolio(request.body);
+        const portfolio = new Portfolio(request.body, request.files);
         await portfolio.edit(request.params.id);
 
         if (portfolio.errors.length > 0) {
@@ -143,6 +143,37 @@ exports.deleteImage = async (request, response) => {
         }
 
         const portfolio = await Portfolio.delete(request.params.id);
+
+        if (process.env.STORAGE_TYPE === "s3") {
+            let objectsKeys = [];
+    
+            for (let i in this.images) {
+                objectsKeys.push(this.images[i].key);
+            }
+    
+            const objects = objectsKeys.map((key) => ({ Key: key }));
+    
+            return s3
+                .deleteObjects({
+                    Bucket: process.env.BUCKET_NAME,
+                    Delete: {
+                        Objects: objects,
+                    },
+                })
+                .promise();
+        } else {
+            let objectsKeys = [];
+    
+            for (let i in this.images) {
+                objectsKeys.push(this.images[i].key);
+            }
+    
+            objectsKeys.forEach((key) => {
+                return promisify(fs.unlink)(
+                    path.resolve(__dirname, "..", "public", "uploads", key)
+                );
+            });
+        }
 
         if (!portfolio)
             return response.render("404", {

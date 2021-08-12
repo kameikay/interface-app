@@ -307,7 +307,7 @@ header .navbar .menu-items a:hover {
 .admin-container {
   width: 100vw;
   height: 100vh;
-  background-color: #FDFDFD;
+  background: url("./../images/admin-bg.jpg") no-repeat center center/cover;
   position: relative;
 }
 .admin-container .aside {
@@ -316,8 +316,12 @@ header .navbar .menu-items a:hover {
   left: 0;
   width: 15vw;
   height: 100%;
-  background-color: #7ECED7;
-  box-shadow: 2px 0 10px 2px rgba(0, 0, 0, 0.226);
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .admin-container .aside .title {
   padding: 1rem;
@@ -328,10 +332,6 @@ header .navbar .menu-items a:hover {
 }
 .admin-container .aside .title > img {
   width: 48px;
-}
-.admin-container .aside .title > h1 {
-  color: #FDFDFD;
-  margin-top: 1rem;
 }
 .admin-container .aside > ul {
   width: 100%;
@@ -344,13 +344,22 @@ header .navbar .menu-items a:hover {
 .admin-container .aside > ul > li {
   width: 100%;
   height: 2rem;
-  text-align: center;
   margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 .admin-container .aside > ul > li > a {
   text-transform: uppercase;
   font-weight: 600;
-  color: #FDFDFD;
+  color: #115157;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin-container .aside > ul > li > a > img {
+  width: 2rem;
+  margin: 0 2rem;
 }
 .admin-container .aside > ul > li > a:hover {
   color: #64B42D;
@@ -365,12 +374,17 @@ header .navbar .menu-items a:hover {
   color: #FDFDFD;
   border-radius: 1rem;
 }
+.admin-container .aside .logout > img {
+  width: 2rem;
+  margin: 0 1rem;
+}
 .admin-container .aside .logout:hover {
   background-color: #af1834;
   color: #FDFDFD;
 }
 .admin-container .main {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 4rem 0 4rem calc(15vw);
@@ -386,12 +400,16 @@ header .navbar .menu-items a:hover {
   width: 90%;
   padding: 2rem;
   height: 100%;
-  background-color: #FDFDFD;
-  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   border-bottom: 1px solid #858585;
   border-spacing: 0;
   table-layout: fixed;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .admin-container .main__container table thead th {
   padding: 0.5rem 0;
@@ -419,13 +437,17 @@ header .navbar .menu-items a:hover {
 .admin-container .main__container table tbody tr td {
   text-align: center;
   color: #115157;
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .admin-container .main__container table tbody tr td > a {
   color: #115157;
 }
 .admin-container .main__container table tbody tr td .edit {
   background-color: #64B42D;
-  padding: 0.8rem;
+  padding: 0.5rem;
   border-radius: 1rem;
   border: none;
   font-size: 1rem;
@@ -435,12 +457,15 @@ header .navbar .menu-items a:hover {
 .admin-container .main__container table tbody tr td .edit > a {
   color: #FDFDFD;
 }
+.admin-container .main__container table tbody tr td .edit > a > img {
+  width: 16px;
+}
 .admin-container .main__container table tbody tr td .edit:hover {
   background-color: #4C8B20;
 }
 .admin-container .main__container table tbody tr td .delete {
   background-color: #d61034;
-  padding: 0.8rem;
+  padding: 0.5rem;
   border-radius: 1rem;
   border: none;
   font-size: 1rem;
@@ -449,6 +474,9 @@ header .navbar .menu-items a:hover {
 }
 .admin-container .main__container table tbody tr td .delete > a {
   color: #FDFDFD;
+}
+.admin-container .main__container table tbody tr td .delete > a > img {
+  width: 16px;
 }
 .admin-container .main__container table tbody tr td .delete:hover {
   background-color: #af1834;
@@ -577,6 +605,13 @@ header .navbar .menu-items a:hover {
 .admin-container .main__container .new-post form#new-post .imagesClass .images-posted .image-posted .delete-button {
   background-color: #d61034;
   color: #FDFDFD;
+  border-radius: 99rem;
+  text-align: center;
+  padding: 0.3rem;
+}
+.admin-container .main__container .new-post form#new-post .imagesClass .images-posted .image-posted .delete-button > img {
+  width: 24px;
+  height: 24px;
 }
 .admin-container .main__container .new-post form#new-post > button {
   margin: 2rem 0 1rem;
@@ -615,57 +650,6 @@ header .navbar .menu-items a:hover {
   color: #FDFDFD;
 }
 
-@media screen and (max-width: 1200px) {
-  .admin-container .aside {
-    width: 20vw;
-  }
-  .admin-container .aside .title > img {
-    width: 42px;
-  }
-  .admin-container .main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem 0 4rem calc(20vw);
-  }
-  .admin-container .main__container table {
-    width: 90%;
-    padding: 1rem;
-    table-layout: auto;
-  }
-  .admin-container .main__container table thead th {
-    padding: 0.5rem 0;
-    font-size: 1rem;
-  }
-  .admin-container .main__container table tbody tr {
-    padding: 0 2rem;
-  }
-  .admin-container .main__container table tbody tr td {
-    text-align: center;
-    color: #115157;
-  }
-  .admin-container .main__container table tbody tr td button {
-    padding: 0.5rem;
-    border-radius: 1rem;
-    border: none;
-    font-size: 1rem;
-    color: #FDFDFD;
-    cursor: pointer;
-  }
-  .admin-container .main__container table tbody tr td > a {
-    color: #115157;
-  }
-  .admin-container .main__container .new-post {
-    width: 80%;
-  }
-  .admin-container .main__container .new-post .title-new-post {
-    font-size: 1.75rem;
-  }
-  .admin-container .main__container .new-post form#new-post .imagesClass .images-posted .image-posted > img {
-    width: 15vw;
-    height: 100%;
-  }
-}
 .login-section {
   background: url("../images/login-bg.jpg") no-repeat center/cover;
   width: 100vw;
@@ -1252,7 +1236,6 @@ header .navbar .menu-items a:hover {
   text-align: center;
 }
 .beneficios__container__cards__card .beneficios-text p {
-  text-align: justify;
   margin: 32px 16px 24px 0;
 }
 
@@ -2077,9 +2060,6 @@ label {
   justify-content: space-between;
   margin-right: 120px;
 }
-.about-us__container__faq__container__header .actived {
-  background-color: #115157;
-}
 .about-us__container__faq__container__header__head {
   width: 100%;
   background-color: #7ECED7;
@@ -2101,9 +2081,6 @@ label {
 }
 .about-us__container__faq__container__header__head__title > h4 {
   font-size: 1.5rem;
-}
-.about-us__container__faq__container__header__head__arrow .active {
-  transform: rotate(-90deg);
 }
 .about-us__container__faq__container__header__head__arrow > img {
   transition: all ease-in-out 0.3s;
@@ -2213,6 +2190,14 @@ label {
   justify-content: center;
 }
 
+.about-us__container__faq__container__header__head.actived {
+  background-color: #115157;
+}
+
+.arrow-active {
+  transform: rotate(-90deg);
+}
+
 @media screen and (max-width: 1200px) {
   .about-us {
     display: flex;
@@ -2283,6 +2268,24 @@ label {
   }
   .about-us__container__why-interface > h2 {
     font-size: 1.75rem;
+  }
+  .about-us__container__faq {
+    padding: 0 2rem;
+  }
+  .about-us__container__faq__container__header {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 80px;
+  }
+  .about-us__container__faq__container__header__head__title > h4 {
+    font-size: 1.25rem;
+  }
+  .about-us__container__faq__container__card {
+    width: 45%;
   }
   .about-us__container__objectives__objective {
     width: 100%;
@@ -2383,6 +2386,9 @@ label {
     position: relative;
     width: 100%;
   }
+  .about-us__container__what-we-do__container__squares__square {
+    width: 40%;
+  }
   .about-us__container__what-we-do__container__card {
     width: 40%;
     height: -webkit-fit-content;
@@ -2460,7 +2466,7 @@ label {
     margin-top: 24px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .about-us {
     text-align: center;
   }
@@ -2547,6 +2553,39 @@ label {
   }
   .about-us__container__why-interface__container__img {
     display: none;
+  }
+  .about-us__container__faq {
+    width: 100%;
+    margin-bottom: 64px;
+    padding: 0 2rem;
+  }
+  .about-us__container__faq__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .about-us__container__faq__container__header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 0;
+  }
+  .about-us__container__faq__container__header__head {
+    width: 100%;
+  }
+  .about-us__container__faq__container__header__head__title > h4 {
+    font-size: 1.25rem;
+  }
+  .about-us__container__faq__container__header__head__arrow {
+    display: none;
+  }
+  .about-us__container__faq__container__card {
+    width: 100%;
+    margin-top: 1rem;
   }
   .about-us__container__objectives__objective {
     width: 100%;

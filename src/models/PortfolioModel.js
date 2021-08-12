@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const aws = require("aws-sdk");
-const fs = require('fs')
-const path = require('path')
-const { promisify } = require('util')
+const fs = require("fs");
+const path = require("path");
+const { promisify } = require("util");
 
 const s3 = new aws.S3();
 
@@ -19,9 +19,7 @@ const PortfolioSchema = new mongoose.Schema({
 PortfolioSchema.pre("save", function () {
     if (!this.images[0].url) {
         for (let i = 0; i < this.images.length; i++) {
-            this.images[
-                i
-            ].url = `${process.env.APP_URL}/uploads/${this.images[i].key}`;
+            this.images[i].url = `${process.env.APP_URL}/uploads/${this.images[i].key}`;
         }
     }
 });
@@ -51,10 +49,11 @@ PortfolioSchema.pre("remove", function () {
             objectsKeys.push(this.images[i].key);
         }
 
-        objectsKeys.forEach(key => {
-            return promisify(fs.unlink)(path.resolve(__dirname, '..', 'public', 'uploads', key))
-
-        })
+        objectsKeys.forEach((key) => {
+            return promisify(fs.unlink)(
+                path.resolve(__dirname, "..", "public", "uploads", key)
+            );
+        });
     }
 });
 
@@ -111,7 +110,29 @@ class Portfolio {
         if (typeof id !== "string") return;
         if (this.errors.length > 0) return;
 
-        this.portfolio = await PortfolioModel.findByIdAndUpdate(id, this.body, {
+        let imagesArray = [];
+        
+        this.files.forEach((e) => {
+            const file = {
+                name: e.originalname,
+                size: e.size,
+                key: e.key,
+                url: e.location,
+            };
+
+            imagesArray.push(file);
+        });
+
+        this.reqBodyAndFiles = {
+            name: this.body.name,
+            category: this.body.category,
+            address: this.body.address,
+            description: this.body.description,
+            videoURL: this.body.videoURL,
+            images: imagesArray,
+        };
+
+        this.portfolio = await PortfolioModel.findByIdAndUpdate(id, this.reqBodyAndFiles, {
             new: true,
         });
     }
@@ -125,7 +146,6 @@ class Portfolio {
 
         return portfolioCase;
     }
-
 }
 
 module.exports = Portfolio;

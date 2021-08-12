@@ -10,7 +10,6 @@
             <div class="login-container">
                 <img src="./images/brand Interface-05.png" alt="INTERFACE LOGO">
                 <form action="/user/" id="login" method="POST">
-                    <input type="hidden" name="_csrf" value="<%=csrfToken %>">
                     <%- include('../includes/messages') %> 
                     <label for="login">Usuário:</label>
                     <input type="text" name="login" required>

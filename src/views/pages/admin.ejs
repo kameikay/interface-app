@@ -9,9 +9,9 @@
 
     
             <main class="main">
-                <div class="main__container">
                     <%- include('../includes/messages') %> 
 
+                <div class="main__container">
                     <table class="portfolio-table">
                         <thead>
                             <tr class="table-title">
@@ -36,7 +36,7 @@
                                 <% portfolio.forEach(element => { %> 
                                     <tr class="table-items">
                                         <td class="table-name"><a href="/user/admin/edit/<%= element._id %> "><%= element.name %> </a></td>
-                                        <td class="table-category"><a href=""><%= element.category %> </a></td>
+                                        <td class="table-category"><%= element.category %></td>
                                         <td class="table-address"><%= element.address %> </td>
                                         <td class="table-description"><%= element.description %> </td>
                                         <td class="table-videos">
@@ -48,8 +48,8 @@
                                         </td>
                                         <td class="table-photos"><%= element.photos %> </td>
                                         <td class="table-actions">
-                                            <button class="edit"><a href="/user/admin/edit/<%= element._id %>">Editar</a></button>
-                                            <button class="delete"><a href="/user/admin/delete/<%= element._id %>">Deletar</a></button>
+                                            <button class="edit"><a href="/user/admin/edit/<%= element._id %>"><img src="../images/editar.png" alt="EDITAR"></a></button>
+                                            <button class="delete"><a href="/user/admin/delete/<%= element._id %>"><img src="../images/lixeira-aberta.png" alt="DELETAR"></a></button>
                                         </td>
                                     </tr>
                                 <% }) %> 

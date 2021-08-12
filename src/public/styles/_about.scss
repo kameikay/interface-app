@@ -176,10 +176,6 @@
                     justify-content: space-between;
                     margin-right: 120px;
 
-                    .actived {
-                        background-color: $dark-navy;
-                    }
-
                     &__head {
                         width: 100%;
                         background-color: $light-navy;
@@ -198,6 +194,7 @@
 
                             > img {
                                 margin-right: 1rem;
+
                             }
 
                             > h4 {
@@ -206,15 +203,14 @@
                         }
 
                         &__arrow {
-                            .active {
-                                transform: rotate(-90deg);
-                            }
                             > img {
                                 transition: all ease-in-out 0.3s;
                                 cursor: pointer;
                             }
                         }
                     }
+
+
                 }
 
                 &__card {
@@ -342,6 +338,17 @@
     justify-content: center;
 }
 
+.about-us__container__faq__container__header__head {
+    &.actived {
+        background-color: $dark-navy;
+    }
+}
+
+.arrow-active {
+    transform: rotate(-90deg);
+
+}
+
 @media screen and (max-width: $bg) {
     .about-us {
         display: flex;
@@ -427,6 +434,34 @@
 
                 > h2 {
                     font-size: $h3;
+                }
+            }
+
+            &__faq {
+                padding: 0 2rem;
+
+                &__container {
+                    &__header {
+                        width: 45%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-right: 80px;
+
+                        &__head {
+                            &__title {
+                                > h4 {
+                                    font-size: $h5;
+                                }
+                            }
+                        }
+                    }
+
+                    &__card {
+                        width: 45%;
+                    }
                 }
             }
 
@@ -552,6 +587,12 @@
                     position: relative;
                     width: 100%;
 
+                    &__squares {
+
+                        &__square {
+                            width: 40%;
+                        }
+                    }
                     &__card {
                         width: 40%;
                         height: fit-content;
@@ -653,7 +694,7 @@
     }
 }
 
-@media screen and (max-width: $sm) {
+@media screen and (max-width: $x-sm) {
     .about-us {
         text-align: center;
 
@@ -762,6 +803,49 @@
                 }
             }
 
+            &__faq {
+                width: 100%;
+                margin-bottom: 64px;
+                padding: 0 2rem;
+    
+                &__container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+    
+                    &__header {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-right: 0;
+    
+                        &__head {
+                            width: 100%;
+    
+                            &__title {
+    
+                                > h4 {
+                                    font-size: $h5;
+                                }
+                            }
+
+                            &__arrow {
+                                display: none;
+                            }
+                        }
+                    }
+    
+                    &__card {
+                        width: 100%;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+
             &__objectives {
                 &__objective {
                     width: 100%;
@@ -770,13 +854,7 @@
                     flex-direction: column;
 
                     &__card {
-                        // width: 240px;
-                        // height: 240px;
-                        // margin: 2rem 0;
 
-                        // > img {
-                        //     width: 160px;
-                        // }
                         display: none;
                     }
 

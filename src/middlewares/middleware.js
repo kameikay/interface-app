@@ -21,8 +21,8 @@ exports.csrfMiddleware = (request, response, next) => {
 
 exports.loginRequired = (request, response, next) => {
     if (!request.session.user) {
-        request.session.save(() => response.redirect('/'))
-        return
+        request.session.save(() => response.redirect("/"));
+        return;
     }
-    next()
-}
+    next();
+};

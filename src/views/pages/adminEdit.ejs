@@ -38,7 +38,7 @@
 
                         <%- include('../includes/messages') %> 
 
-                        <form action="/user/admin/edit/<%= portfolio._id %> " method="POST" id="new-post">
+                        <form action="/user/admin/edit/<%= portfolio._id %> " method="POST" id="new-post" enctype="multipart/form-data">
 
                             <div class="name-category">
                                 <div class="name">
@@ -62,7 +62,7 @@
 
                             <div class="description">
                                 <label for="description">Descrição:</label>
-                                <textarea name="description" id="description" value="<%= portfolio.description %>"  required></textarea>
+                                <textarea name="description" id="description" required></textarea>
                             </div>
 
                             <div class="video">
@@ -72,13 +72,13 @@
                     
                             <div class="imagesClass">
                                 <label for="images">Fotos:</label>
-                                <input type="file" name="images" id="images">
+                                <input type="file" name="images" id="images" multiple>
                                 
                                 <div class="images-posted">
                                     <% portfolio.images.forEach(image => { %> 
                                             <div class="image-posted">
                                                 <img src="<%= image.url %> "/>
-                                                <a href="" class="delete-button">APAGAR</a>
+                                                <a href="/user/admin/delete-image/<%= portfolio._id %>/<%= image.key %> " class="delete-button"><img src="../../../images/lixeira-aberta.png"/></a>
                                             </div>
                                     <% }) %> 
                                 </div>

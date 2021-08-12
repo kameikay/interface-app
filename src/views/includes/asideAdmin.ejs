@@ -1,16 +1,31 @@
 <aside class="aside">
     <div class="title">
         <% if (title === 'Interface | Admin - Editar') { %>
-            <img src="../../../images/logo-semescrita.png" alt="INTERFACE LOGO" />
+        <img src="../../../images/logo-semescrita.png" alt="INTERFACE LOGO" />
         <% } else { %>
-            <img src="../images/logo-semescrita.png" alt="INTERFACE LOGO" />
+        <img src="../images/logo-semescrita.png" alt="INTERFACE LOGO" />
         <% } %>
-        <!-- <h1>Interface</h1> -->
     </div>
     <ul>
-        <li><a href="/user/admin">HOME</a></li>
-        <li><a href="/user/create-post">Criar post</a></li>
+        <li>
+            <a href="/user/admin">
+                <img <% if (title === 'Interface | Admin - Editar') { %>
+                src="../../images/home-ico.png" <% } %>
+                src="../images/home-ico.png" alt=""> HOME
+            </a>
+        </li>
+        <li>
+            <a href="/user/create-post">
+                <img <% if (title === 'Interface | Admin - Editar') { %>
+                src="../../images/create.png" <% } %> src="../images/create.png"
+                alt=""> Criar post</a
+            >
+        </li>
     </ul>
 
-    <a href="/user/logout" class="logout">Deslogar</a>
+    <a href="/user/logout" class="logout">
+        <img <% if (title === 'Interface | Admin - Editar') { %>
+        src="../../../images/logout.png" <% } %> src="../images/logout.png"
+        alt=""> Deslogar</a
+    >
 </aside>

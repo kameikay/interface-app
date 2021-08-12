@@ -50,14 +50,6 @@ server.use(express.static(path.resolve(__dirname, "src", "public")));
 server.set("views", path.resolve(__dirname, "src", "views", "pages"));
 server.set("view engine", "ejs");
 
-server.use(middlewareError);
-
-server.use("/user", adminRoutes);
-
-server.use(csrf());
-server.use(checkCsrfError);
-server.use(csrfMiddleware);
-
 server.use(
     express.urlencoded({
         extended: true,
@@ -65,6 +57,14 @@ server.use(
 );
 
 server.use(express.json());
+
+server.use(middlewareError);
+
+server.use("/user", adminRoutes);
+
+server.use(csrf());
+server.use(checkCsrfError);
+server.use(csrfMiddleware);
 
 server.use("/", routes);
 
