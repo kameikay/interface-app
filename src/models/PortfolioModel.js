@@ -17,9 +17,18 @@ const PortfolioSchema = new mongoose.Schema({
 });
 
 PortfolioSchema.pre("save", function () {
-    if (!this.images[0].url) {
+    if (!this.images[this.images.length - 1].url) {
         for (let i = 0; i < this.images.length; i++) {
             this.images[i].url = `${process.env.APP_URL}/uploads/${this.images[i].key}`;
+        }
+    }
+});
+
+PortfolioSchema.pre("findOneAndUpdate", function () {
+
+    if (!this._update.images[this._update.images.length - 1].url) {
+        for (let i = 0; i < this._update.images.length; i++) {
+            this._update.images[i].url = `${process.env.APP_URL}/uploads/${this._update.images[i].key}`;
         }
     }
 });
@@ -110,7 +119,10 @@ class Portfolio {
         if (typeof id !== "string") return;
         if (this.errors.length > 0) return;
 
-        let imagesArray = [];
+        // V
+        let oldPortfolio = await Portfolio.findById(id)
+
+        let imagesArray = [...oldPortfolio.images];
         
         this.files.forEach((e) => {
             const file = {

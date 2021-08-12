@@ -2480,7 +2480,7 @@ label {
   }
   .about-us__container__what-we-want > h1 {
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     width: 100%;
   }
   .about-us__container__what-we-want > h1::after {
@@ -2501,6 +2501,7 @@ label {
   .about-us__container__what-we-do > h2::after {
     width: 50%;
     margin: 1rem 25%;
+    font-size: 1.5rem;
   }
   .about-us__container__what-we-do__container {
     display: flex;
@@ -2604,7 +2605,7 @@ label {
     content: "MISSÃO";
     color: #000;
     display: block;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin: 1rem 0;
   }
@@ -2612,7 +2613,7 @@ label {
     content: "VISÃO";
     color: #000;
     display: block;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin: 1rem 0;
   }
@@ -2620,7 +2621,7 @@ label {
     content: "VALORES";
     color: #000;
     display: block;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin: 1rem 0;
   }
@@ -2640,7 +2641,7 @@ label {
     margin: 1rem 25%;
   }
   .about-us__container__founder__container__card {
-    width: 360px;
+    width: 320px;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;

@@ -709,7 +709,7 @@
 
                 > h1 {
                     text-align: center;
-                    font-size: $h3;
+                    font-size: $h4;
                     width: 100%;
 
                     &::after {
@@ -736,6 +736,7 @@
                     &::after {
                         width: 50%;
                         margin: 1rem 25%;
+                        font-size: $h4;
                     }
                 }
 
@@ -868,7 +869,7 @@
                             content: "MISSÃO";
                             color: #000;
                             display: block;
-                            font-size: $h3;
+                            font-size: $h4;
                             font-weight: 500;
                             margin: 1rem 0;
                         }
@@ -879,7 +880,7 @@
                             content: "VISÃO";
                             color: #000;
                             display: block;
-                            font-size: $h3;
+                            font-size: $h4;
                             font-weight: 500;
                             margin: 1rem 0;
                         }
@@ -890,7 +891,7 @@
                             content: "VALORES";
                             color: #000;
                             display: block;
-                            font-size: $h3;
+                            font-size: $h4;
                             font-weight: 500;
                             margin: 1rem 0;
                         }
@@ -917,7 +918,7 @@
 
                 &__container {
                     &__card {
-                        width: 360px;
+                        width: 320px;
                         height: fit-content;
                         padding: 2rem;
                         margin-top: 1rem;
