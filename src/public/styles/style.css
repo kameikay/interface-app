@@ -347,7 +347,7 @@ header .navbar .menu-items a:hover {
   margin: 2rem 0;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .admin-container .aside > ul > li > a {
   text-transform: uppercase;
@@ -357,9 +357,8 @@ header .navbar .menu-items a:hover {
   align-items: center;
   justify-content: center;
 }
-.admin-container .aside > ul > li > a > img {
-  width: 2rem;
-  margin: 0 2rem;
+.admin-container .aside > ul > li > a > i {
+  margin: 0 1rem;
 }
 .admin-container .aside > ul > li > a:hover {
   color: #64B42D;
@@ -370,13 +369,9 @@ header .navbar .menu-items a:hover {
   align-items: center;
   justify-content: center;
   background-color: #d61034;
-  padding: 1rem;
+  padding: 0.5rem;
   color: #FDFDFD;
   border-radius: 1rem;
-}
-.admin-container .aside .logout > img {
-  width: 2rem;
-  margin: 0 1rem;
 }
 .admin-container .aside .logout:hover {
   background-color: #af1834;

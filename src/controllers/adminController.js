@@ -24,6 +24,7 @@ exports.createPost = async (request, response) => {
 
 exports.register = async (req, res) => {
     try {
+        await req.files;
         const portfolio = new Portfolio(req.body , req.files);
         await portfolio.register();
 
@@ -133,63 +134,3 @@ exports.deletePost = async (request, response) => {
         });
     }
 };
-
-// exports.deleteImage = async (request, response) => {
-//     try {
-//         if (!request.params.id) {
-//             return response.render("404", {
-//                 title: "Interface | Página não encontrada",
-//             });
-//         }
-
-//         const portfolio = await Portfolio.delete(request.params.id);
-
-//         if (process.env.STORAGE_TYPE === "s3") {
-//             let objectsKeys = [];
-    
-//             for (let i in this.images) {
-//                 objectsKeys.push(this.images[i].key);
-//             }
-    
-//             const objects = objectsKeys.map((key) => ({ Key: key }));
-    
-//             return s3
-//                 .deleteObjects({
-//                     Bucket: process.env.BUCKET_NAME,
-//                     Delete: {
-//                         Objects: objects,
-//                     },
-//                 })
-//                 .promise();
-//         } else {
-//             let objectsKeys = [];
-    
-//             for (let i in this.images) {
-//                 objectsKeys.push(this.images[i].key);
-//             }
-    
-//             objectsKeys.forEach((key) => {
-//                 return promisify(fs.unlink)(
-//                     path.resolve(__dirname, "..", "public", "uploads", key)
-//                 );
-//             });
-//         }
-
-//         if (!portfolio)
-//             return response.render("404", {
-//                 title: "Interface | Página não encontrada",
-//             });
-
-//         request.flash("success", "Portfólio deletado com sucesso");
-
-//         request.session.save(function () {
-//             return response.redirect("/user/admin");
-//         });
-//         return;
-//     } catch (error) {
-//         console.log(error);
-//         return response.render("404", {
-//             title: "Interface | Página não encontrada",
-//         });
-//     }
-// }
