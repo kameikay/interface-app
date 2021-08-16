@@ -25,7 +25,7 @@ exports.createPost = async (request, response) => {
 exports.register = async (req, res) => {
     try {
         await req.files;
-        const portfolio = new Portfolio(req.body , req.files);
+        const portfolio = new Portfolio(req.body, req.files);
         await portfolio.register();
 
         if (portfolio.errors.length > 0) {
@@ -35,12 +35,11 @@ exports.register = async (req, res) => {
             });
             return;
         }
-        
+
         req.flash("success", "Portfólio registrado com sucesso");
         req.session.save(function () {
             return res.redirect("/user/create-post");
         });
-
     } catch (error) {
         console.log(error);
         return res.render("404", {

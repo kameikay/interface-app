@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const server = express();
-const PORT = 8080;
 const path = require("path");
 const mongoose = require("mongoose");
 const morgan = require(`morgan`);
@@ -69,7 +68,7 @@ server.use(csrfMiddleware);
 server.use("/", routes);
 
 server.on("Database OK", () => {
-    server.listen(PORT, () => {
-        console.log(`🔥 Server running at http://localhost:${PORT}`);
+    server.listen(process.env.SERVER_PORT, () => {
+        console.log(`🔥 Server running at http://localhost:${process.env.SERVER_PORT}`);
     });
 });

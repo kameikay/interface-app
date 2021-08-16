@@ -77,13 +77,13 @@
 
                                     <div class="imagesClass">
                                         <label for="images">Fotos:</label>
-                                        <input type="file" name="images" id="images" multiple>
+                                        <input type="file" name="images" id="images" multiple accept="images/*">
 
                                         <div class="images-posted">
                                             <% portfolio.images.forEach(image=> { %>
                                                 <div class="image-posted">
                                                     <img src="<%= image.url %> " />
-                                                    <a href="/user/delete-image/<%= portfolio._id %>?<%= image.key %> "
+                                                    <a href="/user/delete-image/<%= portfolio._id %>/<%= image.key %>"
                                                         class="delete-button"><i class="fas fa-trash-alt"></i></a>
                                                 </div>
                                                 <% }) %>
@@ -96,7 +96,6 @@
 
                     </div>
                 </main>
-
         </div>
 
         <script src="../../../scripts/preloader.js" type="text/javascript"></script>

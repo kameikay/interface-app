@@ -18,8 +18,6 @@ route.get("/simulacao", simuladorController.simuladorPage);
 route.get("/portfolio", portfolioController.portfolioPage);
 route.get("/portfolio/:id", portfolioController.showCases);
 
-
-
 route.get("*", errorController.errorPage);
 
 module.exports = route;
