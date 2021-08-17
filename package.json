@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server.js",
-    "run": "node server.js"
+    "build": "node server.js",
+    "webpack": "webpack -w"
   },
   "dependencies": {
     "aws-sdk": "^2.965.0",

@@ -3,7 +3,6 @@ const express = require("express");
 const server = express();
 const path = require("path");
 const mongoose = require("mongoose");
-const morgan = require(`morgan`);
 
 mongoose
     .connect(process.env.CONNECTION_STRING, {
@@ -42,7 +41,6 @@ const sessionOptions = session({
 server.use(sessionOptions);
 server.use(flash());
 
-server.use(morgan("dev"));
 
 server.use(express.static(path.resolve(__dirname, "src", "public")));
 
