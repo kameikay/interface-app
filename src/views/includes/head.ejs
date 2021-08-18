@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Soluções sustentáveis para diminuir sua conta de água e/ou luz. Instalação de placas solares e captação da água da chuva.">
-        <meta name="theme-color" content="#1d99a7" />
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/swiper/swiper-bundle.min.css"
-        />
-        <% if (title === 'Interface | Admin' || title === 'Interface | Página não encontrada' || title === 'Interface | Portfólio - Serviço') { %>
-            <link rel="stylesheet" href="../styles/style.css" />
-            <link rel="stylesheet" href="../../styles/style.css" />
-            <link rel="shortcut icon" href="../images/favicon-32x32.png" />
-            <link rel="shortcut icon" href="../../images/favicon-32x32.png" />
-            
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Soluções sustentáveis para diminuir sua conta de água e/ou luz. Instalação de placas solares e captação da água da chuva.">
+    <meta name="theme-color" content="#1d99a7" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <% if (title==='Interface | Admin' || title==='Interface | Página não encontrada' ||
+        title==='Interface | Portfólio - Serviço' ) { %>
+        <link rel="stylesheet" href="../styles/style.css" />
+        <link rel="stylesheet" href="../../styles/style.css" />
+        <link rel="shortcut icon" href="../images/favicon-32x32.png" />
+        <link rel="shortcut icon" href="../../images/favicon-32x32.png" />
+
         <% } else { %>
             <link rel="stylesheet" href="./styles/style.css" />
             <link rel="shortcut icon" href="./images/favicon-32x32.png" />
-        <% } %>
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-        <% if (title === 'Interface | Simulação') { %>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.11.2/jquery.mask.min.js"
-            integrity="sha512-Y/GIYsd+LaQm6bGysIClyez2HGCIN1yrs94wUrHoRAD5RSURkqqVQEU6mM51O90hqS80ABFTGtiDpSXd2O05nw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
-        <% } %>
-        
-        <title><%- title %></title>
-    </head>
+            <% } %>
+
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+                    rel="stylesheet" />
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+                    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+                    crossorigin="anonymous" />
+                <% if (title==='Interface | Simulação' ) { %>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.11.2/jquery.mask.min.js"
+                        integrity="sha512-Y/GIYsd+LaQm6bGysIClyez2HGCIN1yrs94wUrHoRAD5RSURkqqVQEU6mM51O90hqS80ABFTGtiDpSXd2O05nw=="
+                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0WY67Z87P"></script>
+                    <script>
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag() { dataLayer.push(arguments); }
+                        gtag('js', new Date());
+
+                        gtag('config', 'G-Y0WY67Z87P');
+                    </script>
+                    <% } %>
+
+                        <title>
+                            <%- title %>
+                        </title>
+</head>
+
 </html>
