@@ -34,7 +34,7 @@ function cepValido(cep) {
 
 async function getCEP() {
     const cep = cepInput.value;
-    const url = `http://viacep.com.br/ws/${cep}/json`;
+    const url = `https://viacep.com.br/ws/${cep}/json`;
 
     const data = await fetch(url);
     if (cepValido(cep)) {
