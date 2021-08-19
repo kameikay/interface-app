@@ -9,7 +9,7 @@ const portfolioController = require("../src/controllers/portfolioController");
 const errorController = require("../src/controllers/errorController");
 
 route.get("/", homeController.homePage);
-route.post("/", homeController.sendEmail);
+route.post("/email-enviado", homeController.sendEmail);
 
 route.get("/sobre", aboutController.aboutPage);
 

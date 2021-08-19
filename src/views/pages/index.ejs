@@ -316,9 +316,7 @@
                                             </p>
 
                                             <div class="details">
-                                                <div class="imgBx">
-                                                    <img src="./images/person-test.jpg" alt="Imagem de pessoa" />
-                                                </div>
+                                        
                                                 <h3>
                                                     Someone Famous <br /><span>Creative Designer</span>
                                                 </h3>
@@ -344,38 +342,7 @@
                                             </p>
 
                                             <div class="details">
-                                                <div class="imgBx">
-                                                    <img src="./images/person-test.jpg" alt="Imagem de pessoa" />
-                                                </div>
-                                                <h3>
-                                                    Someone Famous <br /><span>Creative Designer</span>
-                                                </h3>
-                                            </div>
-                                        </div>
-
-                                        <div class="portfolio-anchor">
-                                            <a href="/portfolio">Ver mais</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="testimonialBox">
-                                        <img src="./images/aspas.png" alt="Imagem de aspas" class="quote" />
-                                        <div class="content">
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Dolore numquam deserunt
-                                                tenetur accusamus veritatis, nisi corrupti
-                                                sapiente! Deleniti enim sequi quaerat animi
-                                                repellat, explicabo veritatis rerum odio,
-                                                cum tenetur fuga.
-                                            </p>
-
-                                            <div class="details">
-                                                <div class="imgBx">
-                                                    <img src="./images/person-test.jpg" alt="Imagem de pessoa" />
-                                                </div>
+                                        
                                                 <h3>
                                                     Someone Famous <br /><span>Creative Designer</span>
                                                 </h3>
@@ -402,9 +369,7 @@
                                             </p>
 
                                             <div class="details">
-                                                <div class="imgBx">
-                                                    <img src="./images/person-test.jpg" alt="Imagem de pessoa" />
-                                                </div>
+                                        
                                                 <h3>
                                                     Someone Famous <br /><span>Creative Designer</span>
                                                 </h3>
@@ -431,9 +396,34 @@
                                             </p>
 
                                             <div class="details">
-                                                <div class="imgBx">
-                                                    <img src="./images/person-test.jpg" alt="Imagem de pessoa" />
-                                                </div>
+                                        
+                                                <h3>
+                                                    Someone Famous <br /><span>Creative Designer</span>
+                                                </h3>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio-anchor">
+                                            <a href="/portfolio">Ver mais</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="testimonialBox">
+                                        <img src="./images/aspas.png" alt="Imagem de aspas" class="quote" />
+                                        <div class="content">
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Dolore numquam deserunt
+                                                tenetur accusamus veritatis, nisi corrupti
+                                                sapiente! Deleniti enim sequi quaerat animi
+                                                repellat, explicabo veritatis rerum odio,
+                                                cum tenetur fuga.
+                                            </p>
+
+                                            <div class="details">
+                                        
                                                 <h3>
                                                     Someone Famous <br /><span>Creative Designer</span>
                                                 </h3>
@@ -456,7 +446,7 @@
                                     <div class="contato__container__inside__infos__form">
                                         <h1>Vamos conversar?</h1>
 
-                                        <form action="" method="POST" id="contact-form">
+                                        <form action="/send" method="POST" id="contact-form">
                                             <input type="hidden" name="_csrf" value="<%=csrfToken %>">
                                             <div class="nome">
                                                 <label for="name" class="label">Nome</label>
@@ -468,6 +458,7 @@
                                                 <label for="email" class="label">E-mail</label>
                                                 <input type="text" name="email" id="email" placeholder="seu@email.com"
                                                     class="input" />
+                                                    <span id="email-error"></span>
                                             </div>
 
                                             <div class="verificacao">
@@ -507,8 +498,7 @@
                         <script src="./scripts/preloader.js"></script>
                         <script src="./scripts/header.js"></script>
                         <script src="./scripts/portfolioSection.js"></script>
-
-
+                        <script src="./scripts/contato.js"></script>
                         <script src="./scripts/gsap.js"></script>
     </body>
 

@@ -155,6 +155,12 @@ label {
     display: block;
 }
 
+#email-error {
+    display: inline-block;
+    color: rgb(214, 67, 67);
+    padding: 0.5rem 0;
+}
+
 @media screen and (max-width: $bg) {
     .contato__container {
         padding: 0 2rem;
