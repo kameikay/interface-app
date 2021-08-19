@@ -14,14 +14,7 @@
             width: 30%;
 
             > h1 {
-                background: linear-gradient(
-                    90deg,
-                    #1d99a7 0%,
-                    #7eced7 50%,
-                    #94d567 100%
-                );
-                background-clip: text;
-                color: rgba(0, 0, 0, 0.3);
+                color: $dark-navy;
                 font-size: $display-2;
             }
 

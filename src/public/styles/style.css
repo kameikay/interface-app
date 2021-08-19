@@ -1007,10 +1007,7 @@ header .navbar .menu-items a:hover {
 }
 
 .error-section .error-container .error-text > h1 {
-  background: -webkit-gradient(linear, left top, right top, from(#1d99a7), color-stop(50%, #7eced7), to(#94d567));
-  background: linear-gradient(90deg, #1d99a7 0%, #7eced7 50%, #94d567 100%);
-  background-clip: text;
-  color: rgba(0, 0, 0, 0.3);
+  color: #115157;
   font-size: 4.5rem;
 }
 
@@ -5095,10 +5092,7 @@ label {
 }
 
 .thanks-section .thanks-container .thanks-text > h1 {
-  background: -webkit-gradient(linear, left top, right top, from(#1d99a7), color-stop(50%, #7eced7), to(#94d567));
-  background: linear-gradient(90deg, #1d99a7 0%, #7eced7 50%, #94d567 100%);
-  background-clip: text;
-  color: rgba(0, 0, 0, 0.3);
+  color: #115157;
   font-size: 4.5rem;
 }
 
