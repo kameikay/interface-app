@@ -21,7 +21,7 @@ exports.homePage = async (request, response) => {
 
         response.render("index", {
             title: "Interface | Soluções Sustentáveis",
-            portfolio: portfolio || ''
+            portfolio
         });
     } catch (error) {
         console.log(error);
