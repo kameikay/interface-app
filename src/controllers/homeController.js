@@ -24,10 +24,10 @@ exports.homePage = async (request, response) => {
             portfolio
         });
     } catch (error) {
-        console.log(error);
         response.render("404", {
             title: "Interface | Página não encontrada",
         });
+        console.log(error);
     }
 };
 
