@@ -304,27 +304,29 @@
                             <div class="swiper-wrapper">
                                 <% if (portfolio) { %>
                                     <% portfolio.map(testimonial => { %>
-                                    <div class="swiper-slide">
-                                        <div class="testimonialBox">
-                                            <img src="./images/aspas.png" alt="Imagem de aspas" class="quote" />
-                                            <div class="content">
-                                                <p>
-                                                    <%= testimonial.testimonialText  %> 
-                                                </p>
+                                        <% if (testimonial.person && testimonial.testimonialText) { %>
+                                            <div class="swiper-slide">
+                                                <div class="testimonialBox">
+                                                    <img src="./images/aspas.png" alt="Imagem de aspas" class="quote" />
+                                                    <div class="content">
+                                                        <p>
+                                                            <%= testimonial.testimonialText  %> 
+                                                        </p>
 
-                                                <div class="details">
-                                                    <h3>
-                                                        <%= testimonial.person %>  <br /><span><%= testimonial.function %> </span>
-                                                    </h3>
+                                                        <div class="details">
+                                                            <h3>
+                                                                <%= testimonial.person %>  <br /><span><%= testimonial.function %> </span>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="portfolio-anchor">
+                                                        <a href="/portfolio/<%= testimonial._id %> ">Ver mais</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-
-                                            <div class="portfolio-anchor">
-                                                <a href="/portfolio/<%= testimonial._id %> ">Ver mais</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <%}) %> 
+                                            </div>  
+                                        <% } %> 
+                                    <%}) %> 
                                 <% } %> 
                                 
                             </div>
