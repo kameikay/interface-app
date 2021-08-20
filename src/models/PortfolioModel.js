@@ -9,6 +9,9 @@ const s3 = new aws.S3();
 const PortfolioSchema = new mongoose.Schema({
     name: { type: String, required: true },
     category: { type: String, required: false },
+    person: { type: String, required: false },
+    function: { type: String, required: false },
+    testimonialText: { type: String, required: false },
     address: { type: String, required: true },
     description: { type: String, required: true },
     videoURL: { type: String, required: false },
@@ -104,6 +107,9 @@ class Portfolio {
         this.reqBodyAndFiles = {
             name: this.body.name,
             category: this.body.category,
+            person: this.body.person,
+            function: this.body.function,
+            testimonialText: this.body.testimonialText,
             address: this.body.address,
             description: this.body.description,
             videoURL: this.body.videoURL,
@@ -111,7 +117,6 @@ class Portfolio {
         };
 
         if (this.errors.length > 0) return;
-
         this.portfolio = await PortfolioModel.create(this.reqBodyAndFiles);
     }
 
@@ -138,6 +143,9 @@ class Portfolio {
         this.reqBodyAndFiles = {
             name: this.body.name,
             category: this.body.category,
+            person: this.body.person,
+            function: this.body.function,
+            testimonialText: this.body.testimonialText,
             address: this.body.address,
             description: this.body.description,
             videoURL: this.body.videoURL,

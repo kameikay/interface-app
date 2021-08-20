@@ -302,139 +302,31 @@
                         <h3>Clique em "ver mais" para ver as declarações completas!</h3>
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="testimonialBox">
-                                        <img src="./images/aspas.png" alt="Imagem de aspas" class="quote" />
-                                        <div class="content">
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Dolore numquam deserunt
-                                                tenetur accusamus veritatis, nisi corrupti
-                                                sapiente! Deleniti enim sequi quaerat animi
-                                                repellat, explicabo veritatis rerum odio,
-                                                cum tenetur fuga.
-                                            </p>
+                                <% if (portfolio) { %>
+                                    <% portfolio.map(testimonial => { %>
+                                    <div class="swiper-slide">
+                                        <div class="testimonialBox">
+                                            <img src="./images/aspas.png" alt="Imagem de aspas" class="quote" />
+                                            <div class="content">
+                                                <p>
+                                                    <%= testimonial.testimonialText  %> 
+                                                </p>
 
-                                            <div class="details">
-                                        
-                                                <h3>
-                                                    Someone Famous <br /><span>Creative Designer</span>
-                                                </h3>
+                                                <div class="details">
+                                                    <h3>
+                                                        <%= testimonial.person %>  <br /><span><%= testimonial.function %> </span>
+                                                    </h3>
+                                                </div>
+                                            </div>
+
+                                            <div class="portfolio-anchor">
+                                                <a href="/portfolio/<%= testimonial._id %> ">Ver mais</a>
                                             </div>
                                         </div>
-                                        <div class="portfolio-anchor">
-                                            <a href="/portfolio">Ver mais</a>
-                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="testimonialBox">
-                                        <img src="./images/aspas.png" alt="Imagem de aspas" class="quote" />
-                                        <div class="content">
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Dolore numquam deserunt
-                                                tenetur accusamus veritatis, nisi corrupti
-                                                sapiente! Deleniti enim sequi quaerat animi
-                                                repellat, explicabo veritatis rerum odio,
-                                                cum tenetur fuga.
-                                            </p>
-
-                                            <div class="details">
-                                        
-                                                <h3>
-                                                    Someone Famous <br /><span>Creative Designer</span>
-                                                </h3>
-                                            </div>
-                                        </div>
-
-                                        <div class="portfolio-anchor">
-                                            <a href="/portfolio">Ver mais</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="testimonialBox">
-                                        <img src="./images/aspas.png" alt="Imagem de aspas" class="quote" />
-                                        <div class="content">
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Dolore numquam deserunt
-                                                tenetur accusamus veritatis, nisi corrupti
-                                                sapiente! Deleniti enim sequi quaerat animi
-                                                repellat, explicabo veritatis rerum odio,
-                                                cum tenetur fuga.
-                                            </p>
-
-                                            <div class="details">
-                                        
-                                                <h3>
-                                                    Someone Famous <br /><span>Creative Designer</span>
-                                                </h3>
-                                            </div>
-                                        </div>
-
-                                        <div class="portfolio-anchor">
-                                            <a href="/portfolio">Ver mais</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="testimonialBox">
-                                        <img src="./images/aspas.png" alt="Imagem de aspas" class="quote" />
-                                        <div class="content">
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Dolore numquam deserunt
-                                                tenetur accusamus veritatis, nisi corrupti
-                                                sapiente! Deleniti enim sequi quaerat animi
-                                                repellat, explicabo veritatis rerum odio,
-                                                cum tenetur fuga.
-                                            </p>
-
-                                            <div class="details">
-                                        
-                                                <h3>
-                                                    Someone Famous <br /><span>Creative Designer</span>
-                                                </h3>
-                                            </div>
-                                        </div>
-
-                                        <div class="portfolio-anchor">
-                                            <a href="/portfolio">Ver mais</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="testimonialBox">
-                                        <img src="./images/aspas.png" alt="Imagem de aspas" class="quote" />
-                                        <div class="content">
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur
-                                                adipisicing elit. Dolore numquam deserunt
-                                                tenetur accusamus veritatis, nisi corrupti
-                                                sapiente! Deleniti enim sequi quaerat animi
-                                                repellat, explicabo veritatis rerum odio,
-                                                cum tenetur fuga.
-                                            </p>
-
-                                            <div class="details">
-                                        
-                                                <h3>
-                                                    Someone Famous <br /><span>Creative Designer</span>
-                                                </h3>
-                                            </div>
-                                        </div>
-
-                                        <div class="portfolio-anchor">
-                                            <a href="/portfolio">Ver mais</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <%}) %> 
+                                <% } %> 
+                                
                             </div>
                         </div>
                     </section>

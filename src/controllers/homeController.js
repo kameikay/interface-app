@@ -13,10 +13,22 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
-exports.homePage = (request, response) => {
-    response.render("index", {
-        title: "Interface | Soluções Sustentáveis",
-    });
+const Portfolio = require("../models/PortfolioModel");
+
+exports.homePage = async (request, response) => {
+    try {
+        const portfolio = await Portfolio.showAll();
+
+        response.render("index", {
+            title: "Interface | Soluções Sustentáveis",
+            portfolio,
+        });
+    } catch (error) {
+        console.log(error);
+        response.render("404", {
+            title: "Interface | Página não encontrada",
+        });
+    }
 };
 
 exports.sendEmail = async (request, response) => {
@@ -45,16 +57,15 @@ exports.sendEmail = async (request, response) => {
             text: message,
         };
 
-        const result = await transport.sendMail(mailOptions)
+        const result = await transport.sendMail(mailOptions);
 
         if (result) {
-            return response.render('thanks', {
-                title: 'Interface | E-mail enviado'
-            })
+            return response.render("thanks", {
+                title: "Interface | E-mail enviado",
+            });
         }
-        
-        return
 
+        return;
     } catch (error) {
         console.log(error);
         response.render("404", {

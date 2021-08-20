@@ -58,6 +58,23 @@
                                         </div>
                                     </div>
 
+                                    <div class="person-function">
+                                        <div class="person">
+                                            <label for="person">Nome da pessoa/empresa:</label>
+                                            <input type="text" id="person" name="person" maxlength="20" value="<%= portfolio.person %>" >
+                                        </div>
+
+                                        <div class="function">
+                                            <label for="function">Função na empresa:</label> 
+                                            <input type="text" id="function" name="function" maxlength="26" value= "<%= portfolio.function %>">
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-div">
+                                        <label for="testimonialText">Testimonial:</label>
+                                        <input type="text" name="testimonialText" maxlength="225" value= "<%= portfolio.testimonialText %>" >
+                                    </div>
+
                                     <div class="address">
                                         <label for="address">Endereço:</label>
                                         <input name="address" id="address" value="<%= portfolio.address %>"
@@ -66,7 +83,7 @@
 
                                     <div class="description">
                                         <label for="description">Descrição:</label>
-                                        <textarea name="description" id="description" required></textarea>
+                                        <textarea name="description" id="description" required><%= portfolio.description %></textarea>
                                     </div>
 
                                     <div class="video">
