@@ -3186,6 +3186,7 @@ label {
   margin: 16px 0;
   -webkit-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
+  cursor: pointer;
 }
 
 .about-us__container__faq__container__header__head__title {
